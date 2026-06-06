@@ -1,0 +1,28 @@
+:root {
+    /* Premium Dark Theme (C1 Advanced) */
+    --bg-primary: #0f172a; /* Deep navy slate */
+    --bg-secondary: #1e293b; /* Elevated card surface */
+    --bg-tertiary: #334155; /* Nested elements */
+    --text-primary: #f1f5f9; /* Crisp light text */
+    --text-secondary: #94a3b8; /* Muted slate text */
+
+    /* Accent Colors */
+    --accent-gold: #2dd4bf; /* Vibrant Teal */
+    --accent-gold-dim: rgba(45, 212, 191, 0.1);
+    --accent-electric: #818cf8; /* Soft Indigo */
+    --accent-dark: rgba(255, 255, 255, 0.05); /* Subtle glass layer */
+
+    --gradient-teal: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
+    --gradient-accent: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
+    --spacing-sm: 8px;
+    --spacing-md: 24px;
+    --spacing-lg: 48px;
+
+    --border-radius: 16px;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --shadow-glow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}

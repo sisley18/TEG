@@ -40,6 +40,22 @@ const tegDataA1A2 = {
                     { q: "Where _____ you from?", correct: "are", explanation: "Use the verb 'to be' ('are') with the subject pronoun 'you'." }
                 ]
             },
+            tenses_cloze: {
+                title: "Tenses Cloze (A1)",
+                description: "Select the correct present tense form of the verb. (Present Simple or Continuous)",
+                items: [
+                    { q: "My mom _____ dinner in the kitchen right now.", options: ["cook", "is cooking", "cooks"], correct: "is cooking", explanation: "Use Present Continuous for actions happening at the moment of speaking ('right now')." },
+                    { q: "I usually _____ the subway to work every morning.", options: ["take", "am taking", "takes"], correct: "take", explanation: "Use Present Simple for routines and habits ('usually', 'every morning')." },
+                    { q: "Listen! The baby _____ in the bedroom.", options: ["cries", "cry", "is crying"], correct: "is crying", explanation: "Use Present Continuous for actions happening right now ('Listen!')." },
+                    { q: "He _____ eating cookies for breakfast.", options: ["does not like", "is not liking", "do not like"], correct: "does not like", explanation: "Use Present Simple negative ('does not like') for general facts and preferences." },
+                    { q: "We _____ a movie at the theater this evening.", options: ["watch", "are watching", "watches"], correct: "are watching", explanation: "Use Present Continuous for fixed arrangements in the near future." },
+                    { q: "Water _____ at 100 degrees Celsius.", options: ["boils", "is boiling", "boil"], correct: "boils", explanation: "Use Present Simple for scientific facts." },
+                    { q: "_____ soccer on weekends?", options: ["Do you play", "Are you playing", "You play"], correct: "Do you play", explanation: "Present Simple question form for habits ('on weekends')." },
+                    { q: "Look! The bus _____. Let's go!", options: ["comes", "is coming", "come"], correct: "is coming", explanation: "Use Present Continuous for actions happening exactly now ('Look!')." },
+                    { q: "She never _____ her apartment on Sundays.", options: ["clean", "is cleaning", "cleans"], correct: "cleans", explanation: "Use Present Simple with adverbs of frequency ('never')." },
+                    { q: "They _____ today because it's a national holiday.", options: ["do not work", "are not working", "not work"], correct: "are not working", explanation: "Use Present Continuous for temporary situations happening around today." }
+                ]
+            },
             sentence_transformation: {
                 title: "Sentence Transformation (A1)",
                 description: "Complete the second sentence so it means the same as the first. Use 1 to 3 words.",
@@ -155,6 +171,22 @@ const tegDataA1A2 = {
                     { q: "If it rains tomorrow, we _____ stay at home.", correct: "will", explanation: "First conditional uses 'will' in the result clause." },
                     { q: "This watch belongs _____ my grandfather.", correct: "to", explanation: "The verb 'belong' takes the preposition 'to'." },
                     { q: "She arrived _____ the airport late yesterday.", correct: "at", explanation: "Use 'arrive at' for specific buildings/airports." }
+                ]
+            },
+            tenses_cloze: {
+                title: "Tenses Cloze (A2)",
+                description: "Select the correct past tense form of the verb. (Past Simple or Continuous)",
+                items: [
+                    { q: "I _____ to the store when it started to rain.", options: ["walked", "was walking", "walk"], correct: "was walking", explanation: "Use Past Continuous for a longer action interrupted by a shorter action." },
+                    { q: "We _____ New York for our vacation last summer.", options: ["were visiting", "visited", "visit"], correct: "visited", explanation: "Use Past Simple for completed actions at a specific time in the past." },
+                    { q: "While she _____ her book, the phone rang.", options: ["read", "was reading", "reads"], correct: "was reading", explanation: "Use Past Continuous after 'while' for an ongoing past action." },
+                    { q: "He _____ to the mall yesterday because he was sick.", options: ["was not going", "did not go", "not went"], correct: "did not go", explanation: "Use Past Simple negative ('did not go') for finished past actions." },
+                    { q: "What _____ at 8 PM last night?", options: ["did you do", "were you doing", "you did"], correct: "were you doing", explanation: "Use Past Continuous for an action in progress at a specific past time." },
+                    { q: "They _____ a new apartment downtown two weeks ago.", options: ["were buying", "bought", "buy"], correct: "bought", explanation: "Use Past Simple for a completed event ('two weeks ago')." },
+                    { q: "I was cooking dinner while my brother _____ TV.", options: ["watched", "was watching", "watching"], correct: "was watching", explanation: "Use Past Continuous for two ongoing actions happening at the same time." },
+                    { q: "She _____ her keys in the parking lot this morning.", options: ["was losing", "lost", "loses"], correct: "lost", explanation: "Use Past Simple for a single event in the past." },
+                    { q: "_____ soccer when he hurt his ankle?", options: ["Did he play", "Was he playing", "He played"], correct: "Was he playing", explanation: "Past Continuous question for an action interrupted by an accident." },
+                    { q: "The kids _____ when the fire alarm went off.", options: ["slept", "were sleeping", "sleep"], correct: "were sleeping", explanation: "Past Continuous for a background action interrupted by a sudden event." }
                 ]
             },
             sentence_transformation: {

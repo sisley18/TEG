@@ -319,7 +319,7 @@ function renderStandardQuestions(exercise, container, savedAnswers, indices, key
         const inputContainer = document.createElement('div');
         inputContainer.className = 'input-container';
         
-        if (exercise.title.toLowerCase().includes('collocation') && item.options) {
+        if ((exercise.title.toLowerCase().includes('collocation') || exercise.title.toLowerCase().includes('tenses')) && item.options) {
             // Multiple Choice options
             const optionsGrid = document.createElement('div');
             optionsGrid.className = 'options-grid';
@@ -673,7 +673,7 @@ function closeModal() {
 // Calculate level progress (average of highest percentages of all exercises except lexical fields)
 function updateLevelProgress(level) {
     let totalScore = 0;
-    const tabs = ['word_formation', 'open_cloze', 'sentence_transformation', 'error_correction', 'vocab_matching', 'idiom_challenge', 'phrasal_verbs'];
+    const tabs = ['word_formation', 'open_cloze', 'tenses_cloze', 'sentence_transformation', 'error_correction', 'vocab_matching', 'idiom_challenge', 'phrasal_verbs'];
     
     tabs.forEach(tab => {
         const key = `${level}_${tab}_percentage`;
@@ -694,7 +694,7 @@ function renderBadgeDisplay() {
     const badgeContainer = document.getElementById('badge-display-container');
     if (!badgeContainer) return;
     
-    const tabs = ['word_formation', 'open_cloze', 'sentence_transformation', 'error_correction', 'vocab_matching', 'idiom_challenge', 'phrasal_verbs'];
+    const tabs = ['word_formation', 'open_cloze', 'tenses_cloze', 'sentence_transformation', 'error_correction', 'vocab_matching', 'idiom_challenge', 'phrasal_verbs'];
     let bronze = 0, silver = 0, gold = 0;
     
     tabs.forEach(tab => {
@@ -739,8 +739,18 @@ function resetLevel() {
         students[activeStudent].scores[key] = {};
         students[activeStudent].scores[pctKey] = 0;
         saveStudents();
-        loadActiveExercise();
         updateLevelProgress(currentLevel);
+        
+        // Shuffle the items for variety
+        const indices = shuffledIndices[key];
+        if (indices && indices.length > 1) {
+            for (let i = indices.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [indices[i], indices[j]] = [indices[j], indices[i]];
+            }
+        }
+        
+        loadActiveExercise();
     }
 }
 

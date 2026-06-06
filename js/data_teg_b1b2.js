@@ -40,6 +40,22 @@ const tegDataB1B2 = {
                     { q: "He ran fast in order _____ catch the train.", correct: "to", explanation: "The purpose expression is 'in order to'." }
                 ]
             },
+            tenses_cloze: {
+                title: "Tenses Cloze (B1)",
+                description: "Select the correct tense. (Present Perfect vs Past Simple)",
+                items: [
+                    { q: "I _____ the new superhero movie at the theater yesterday.", options: ["saw", "have seen", "was seeing"], correct: "saw", explanation: "Use Past Simple for a completed action at a specific time in the past ('yesterday')." },
+                    { q: "She _____ in this apartment since she moved to the city.", options: ["lived", "has lived", "lives"], correct: "has lived", explanation: "Use Present Perfect with 'since' for actions that started in the past and continue to the present." },
+                    { q: "_____ you ever visited the Grand Canyon on your vacation?", options: ["Did", "Have", "Were"], correct: "Have", explanation: "Use Present Perfect ('Have you ever...') to ask about life experiences." },
+                    { q: "They _____ a great soccer game last weekend.", options: ["played", "have played", "were playing"], correct: "played", explanation: "Use Past Simple for finished events with a specific time ('last weekend')." },
+                    { q: "My mom _____ that book three times already.", options: ["read", "has read", "reads"], correct: "has read", explanation: "Use Present Perfect for an action repeated a number of times up to now." },
+                    { q: "We _____ to the mall two days ago to buy some shoes.", options: ["have gone", "went", "go"], correct: "went", explanation: "Use Past Simple with 'ago'." },
+                    { q: "He _____ his keys, so he can't unlock the door.", options: ["lost", "has lost", "was losing"], correct: "has lost", explanation: "Use Present Perfect for a past action with a present result." },
+                    { q: "When _____ the parcel arrive in the mail?", options: ["did", "has", "does"], correct: "did", explanation: "Use Past Simple for questions asking 'When' a specific event happened." },
+                    { q: "I _____ my homework yet. I will do it later.", options: ["didn't finish", "haven't finished", "don't finish"], correct: "haven't finished", explanation: "Use Present Perfect with 'yet' for incomplete actions we expect to happen." },
+                    { q: "The concert _____ before we reached the venue.", options: ["started", "has started", "starts"], correct: "started", explanation: "Past Simple describes the completed action in a past sequence." }
+                ]
+            },
             sentence_transformation: {
                 title: "Sentence Transformation (B1)",
                 description: "Complete the second sentence so it means the same as the first. Use 2 to 5 words.",
@@ -155,6 +171,22 @@ const tegDataB1B2 = {
                     { q: "The concert was called _____ due to the bad weather.", correct: "off", explanation: "To 'call off' means to cancel." },
                     { q: "She behaves as _____ she were the boss of the company.", correct: "if", explanation: "The expression is 'as if' or 'as though' followed by subjunctive." },
                     { q: "We need to focus on _____ the problem can be solved.", correct: "how", explanation: "Use 'how' to refer to the method or manner of solving." }
+                ]
+            },
+            tenses_cloze: {
+                title: "Tenses Cloze (B2)",
+                description: "Select the correct tense. (Past Perfect & Future Forms)",
+                items: [
+                    { q: "By the time we reached the airport, the airplane _____.", options: ["took off", "has taken off", "had taken off"], correct: "had taken off", explanation: "Use Past Perfect to show an action happened before another past action." },
+                    { q: "I _____ my resume by tomorrow afternoon.", options: ["will finish", "will have finished", "am finishing"], correct: "will have finished", explanation: "Use Future Perfect with 'by' a future time to indicate a completed future action." },
+                    { q: "They _____ in the elevator for an hour before help arrived.", options: ["were stuck", "have been stuck", "had been stuck"], correct: "had been stuck", explanation: "Use Past Perfect Continuous/Passive for duration leading up to a past event." },
+                    { q: "Look at those dark clouds! It _____ rain very soon.", options: ["will", "is going to", "shall"], correct: "is going to", explanation: "Use 'is going to' for predictions based on present evidence." },
+                    { q: "She realized she _____ her wallet at the grocery store.", options: ["left", "has left", "had left"], correct: "had left", explanation: "Use Past Perfect for an action that occurred before she realized it." },
+                    { q: "This time next week, I _____ on a beach in Florida.", options: ["will relax", "will be relaxing", "am relaxing"], correct: "will be relaxing", explanation: "Use Future Continuous for an action in progress at a specific future time." },
+                    { q: "When I got to the party, everyone _____ already.", options: ["left", "has left", "had left"], correct: "had left", explanation: "Use Past Perfect with 'already' for the earlier past action." },
+                    { q: "I promise I _____ you as soon as I arrive.", options: ["will call", "am calling", "call"], correct: "will call", explanation: "Use 'will' for spontaneous promises." },
+                    { q: "The movie _____ before we found our seats in the theater.", options: ["started", "had started", "has started"], correct: "had started", explanation: "Past Perfect for an action completed before another past event." },
+                    { q: "Next year, my parents _____ married for 30 years.", options: ["are", "will be", "will have been"], correct: "will have been", explanation: "Use Future Perfect for states or actions continuing up to a point in the future." }
                 ]
             },
             sentence_transformation: {

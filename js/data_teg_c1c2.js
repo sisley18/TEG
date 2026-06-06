@@ -40,6 +40,22 @@ const tegDataC1C2 = {
                     { q: "He was accused of having leaked the info, _____ of which was true.", correct: "none", explanation: "Use 'none of which' to refer to negative statement details." }
                 ]
             },
+            tenses_cloze: {
+                title: "Tenses Cloze (C1)",
+                description: "Select the correct advanced tense. (Future Perfect Continuous, Conditionals)",
+                items: [
+                    { q: "By next summer, I _____ downtown for exactly ten years.", options: ["will live", "will have been living", "will be living"], correct: "will have been living", explanation: "Use Future Perfect Continuous for duration leading up to a specific future point." },
+                    { q: "If he _____ his sneakers, he wouldn't have slipped on the ice.", options: ["wore", "had worn", "was wearing"], correct: "had worn", explanation: "Use Past Perfect in the if-clause for a third conditional (unreal past)." },
+                    { q: "I would be relaxing on my vacation right now if I _____ my flight.", options: ["didn't miss", "hadn't missed", "haven't missed"], correct: "hadn't missed", explanation: "Mixed conditional: Unreal past condition ('hadn't missed') with unreal present result." },
+                    { q: "Before she finally passed the bar exam, she _____ for three years.", options: ["was studying", "has studied", "had been studying"], correct: "had been studying", explanation: "Past Perfect Continuous emphasizes the duration of an action before another past event." },
+                    { q: "If they hadn't forgotten to take out the garbage, the apartment _____ so bad now.", options: ["wouldn't smell", "won't smell", "wouldn't have smelled"], correct: "wouldn't smell", explanation: "Mixed conditional: Past condition affecting the present result ('now')." },
+                    { q: "By the time the game ends, the soccer players _____ for over two hours.", options: ["will play", "will have played", "will have been playing"], correct: "will have been playing", explanation: "Future Perfect Continuous for ongoing duration leading to a future point." },
+                    { q: "Had I known about the terrible traffic, I _____ the subway.", options: ["would take", "would have taken", "took"], correct: "would have taken", explanation: "Third conditional with inversion: 'Had I known' = 'If I had known'." },
+                    { q: "It is essential that he _____ present at the meeting tomorrow.", options: ["is", "be", "will be"], correct: "be", explanation: "Use the present subjunctive ('be') after 'It is essential that'." },
+                    { q: "She acts as if she _____ the CEO of the company.", options: ["is", "were", "has been"], correct: "were", explanation: "Use past subjunctive 'were' after 'as if' for unreal situations." },
+                    { q: "By 2030, scientists hope they _____ a cure for the disease.", options: ["will discover", "will have discovered", "discover"], correct: "will have discovered", explanation: "Future Perfect for an action completed before a specified future time." }
+                ]
+            },
             sentence_transformation: {
                 title: "Sentence Transformation (C1)",
                 description: "Complete the second sentence so it means the same as the first. Use 3 to 6 words.",
@@ -155,6 +171,22 @@ const tegDataC1C2 = {
                     { q: "She has a reputation for being rather reticent _____ it comes to her private life.", correct: "when", explanation: "The phrase is 'when it comes to'." },
                     { q: "The project is on track, provided _____ no unforeseen issues arise.", correct: "that", explanation: "'Provided that' acts as a conditional conjunction." },
                     { q: "He was left in the dark _____ to the company's future plans.", correct: "as", explanation: "The phrase is 'as to' meaning concerning/about." }
+                ]
+            },
+            tenses_cloze: {
+                title: "Tenses Cloze (C2)",
+                description: "Select the correct advanced tense. (Narrative Tenses, Subjunctive)",
+                items: [
+                    { q: "Scarcely _____ the cookie from the oven when the kids ate it.", options: ["had I removed", "did I remove", "I had removed"], correct: "had I removed", explanation: "Inversion with negative adverbials ('Scarcely') requires auxiliary before subject." },
+                    { q: "I'd rather you _____ the attorney until we have more evidence.", options: ["don't contact", "didn't contact", "hadn't contacted"], correct: "didn't contact", explanation: "Use 'would rather' + past subjunctive for present/future preference involving another person." },
+                    { q: "If it _____ for his timely intervention, the business would have failed.", options: ["weren't", "hasn't been", "hadn't been"], correct: "hadn't been", explanation: "Third conditional idiom 'If it hadn't been for' = 'Without'." },
+                    { q: "The manager demanded that the project _____ completed by Monday.", options: ["is", "was", "be"], correct: "be", explanation: "Mandative subjunctive ('be') is used after verbs of commanding or requesting." },
+                    { q: "He was on the verge of _____ a major breakthrough when funding was cut.", options: ["make", "to make", "making"], correct: "making", explanation: "The expression 'on the verge of' is followed by a gerund." },
+                    { q: "Supposing you _____ a million dollars, what would you do first?", options: ["win", "won", "had won"], correct: "won", explanation: "Use 'Supposing' + past simple for hypothetical present/future situations." },
+                    { q: "She is reputed _____ a vast fortune in the stock market last year.", options: ["to make", "to have made", "making"], correct: "to have made", explanation: "Perfect infinitive ('to have made') is used for an action prior to the main reporting verb." },
+                    { q: "Not until she reached the theater _____ that she had forgotten the tickets.", options: ["she realized", "did she realize", "had she realized"], correct: "did she realize", explanation: "Inversion is required in the main clause when 'Not until' begins the sentence." },
+                    { q: "He's bound _____ late; he always gets stuck in traffic.", options: ["to be", "being", "be"], correct: "to be", explanation: "'Bound' meaning 'certain' is followed by the to-infinitive." },
+                    { q: "But for your generous donation, the charity _____ its goals this year.", options: ["won't reach", "wouldn't have reached", "didn't reach"], correct: "wouldn't have reached", explanation: "'But for' introduces a hypothetical past condition, requiring 'would have + past participle'." }
                 ]
             },
             sentence_transformation: {

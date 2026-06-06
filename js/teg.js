@@ -276,12 +276,13 @@ function speakPhrase(text) {
         .replace(/<[^>]+>/g, ' ')
         .replace(/\([^)]*\)/g, '')
         .replace(/\[[^\]]*\]/g, '')
-        .replace(/_+/g, ', ')
+        .replace(/_+/g, ', ') // Just a pause, no words spoken
         .replace(/[\/\(\)\[\]]/g, ' ')
         .replace(/&amp;/g, 'and')
         .replace(/&quot;/g, '')
         .replace(/&#39;/g, "'")
         .replace(/&nbsp;/g, ' ')
+        .replace(/[^\w\s\.,\?!'-]/g, '') // Strip out weird characters to avoid breaking URL
         .replace(/\s+/g, ' ')
         .trim();
 
@@ -307,7 +308,8 @@ function playNextTtsChunk() {
         speedParam = '&ttsspeed=0.24';
     }
     
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=${encodeURIComponent(chunk)}${speedParam}`;
+    // Explicitly request American English with en-US
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(chunk)}${speedParam}`;
     
     ttsAudio.src = url;
     ttsAudio.play().catch(err => {
@@ -353,12 +355,14 @@ function renderStandardQuestions(exercise, container, savedAnswers, indices, key
         const cleanQ = item.q.replace(/\n/g, '<br>');
         textWrapper.innerHTML = `<strong>${displayIndex + 1}.</strong> ${cleanQ} `;
         
-        // Speaker icon for the question
-        const speaker = document.createElement('button');
-        speaker.className = 'speaker-btn';
-        speaker.innerHTML = '🔊';
-        speaker.onclick = () => speakPhrase(item.q);
-        textWrapper.appendChild(speaker);
+        // Speaker icon for the question (DO NOT read sentences with mistakes)
+        if (currentTab !== 'error_correction') {
+            const speaker = document.createElement('button');
+            speaker.className = 'speaker-btn';
+            speaker.innerHTML = '🔊';
+            speaker.onclick = () => speakPhrase(item.q);
+            textWrapper.appendChild(speaker);
+        }
         
         itemDiv.appendChild(textWrapper);
         

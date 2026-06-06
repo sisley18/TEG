@@ -141,6 +141,7 @@ function getLevelData() {
 }
 
 // Load question layout
+function loadActiveExercise() {
     let exercise;
     let key;
     const dropdown = document.getElementById('lexical-dropdown-container');

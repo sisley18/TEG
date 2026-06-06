@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEFR Diagnostic Placement Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/teg.css">
+    <style>
+        .placement-header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .timer-display {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            background: var(--bg-color);
+            padding: 5px 20px;
+            border-radius: 30px;
+            border: 2px solid var(--primary-color);
+        }
+        .timer-warning {
+            color: var(--error-color);
+            border-color: var(--error-color);
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-color);
+        }
+        .question-box {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: var(--bg-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+            font-size: 1rem;
+        }
+        .option-label:hover {
+            background: #f0f7ff;
+            border-color: #bfdbfe;
+        }
+        .option-label input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.2);
+        }
+        .option-label.selected {
+            background: #eff6ff;
+            border-color: var(--primary-color);
+            font-weight: 600;
+        }
+        .reading-text {
+            background: #fafafa;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        .submit-btn-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+        #intro-screen {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        #test-screen {
+            display: none;
+        }
+        .certificate-modal {
+            max-width: 600px;
+            text-align: center;
+        }
+        .cert-level {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 10px 0;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .cert-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .detail-box {
+            background: var(--bg-color);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="placement-header">
+        <div class="container" style="max-width: 1000px; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div class="logo">Placement<span>Test</span></div>
+            <div id="timer-container" style="display: none;">
+                <div class="timer-display" id="time-display">15:00</div>
+            </div>
+            <div>
+                <a href="index.html" class="btn" style="padding: 8px 20px; font-size: 0.9rem; border-radius: 30px;">Exit Test</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="max-width: 900px; margin-top: 30px; margin-bottom: 100px;">
+        
+        <!-- Intro Screen -->
+        <div id="intro-screen" class="animate__animated animate__fadeIn">
+            <h1 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px;">Diagnostic Placement Test</h1>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.6;">
+                This test is designed to accurately evaluate your current English proficiency level in alignment with the 
+                <strong>Common European Framework of Reference (CEFR)</strong> and professional linguistic standards.
+            </p>
+            
+            <div style="text-align: left; background: var(--bg-color); padding: 25px; border-radius: var(--radius-md); margin-bottom: 30px;">
+                <h3 style="margin-bottom: 15px;">Test Structure:</h3>
+                <ul style="list-style-position: inside; color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>Part 1:</strong> Reading Comprehension</li>
+                    <li><strong>Part 2:</strong> Listening Comprehension (Audio required)</li>
+                    <li><strong>Part 3:</strong> Use of English (Writing/Grammar proxy)</li>
+                    <li><strong>Part 4:</strong> Communicative Situations (Speaking proxy)</li>
+                </ul>
+                <p style="margin-top: 15px; font-weight: 600; color: var(--error-color);">
+                    ⏱️ You have exactly 15 minutes to complete 35 questions. The test will auto-submit when time is up.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: 600; display: block; margin-bottom: 10px;">Enter your full name for the certificate:</label>
+                <input type="text" id="candidate-name" class="teg-input" placeholder="e.g. John Doe" style="max-width: 400px; margin: 0 auto;">
+            </div>
+
+            <button class="btn" style="font-size: 1.2rem; padding: 15px 40px; background: var(--gradient-teal); border: none;" onclick="startTest()">Start Test Now</button>
+        </div>
+
+        <!-- Test Screen -->
+        <div id="test-screen">
+            <div id="questions-container">
+                <!-- Questions injected here by JS -->
+            </div>
+            
+            <div class="submit-btn-container">
+                <button class="btn" style="font-size: 1.2rem; padding: 15px 40px; background: var(--gradient-primary); border: none;" onclick="submitTest()">Submit Final Answers</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Results Modal -->
+    <div class="results-modal" id="results-modal">
+        <div class="results-content certificate-modal">
+            <h2 style="font-family: var(--font-heading); color: var(--text-secondary); text-transform: uppercase; letter-spacing: 2px; font-size: 1rem;">Official Result</h2>
+            <div class="cert-level" id="cert-level-display">B2</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 5px;" id="cert-title-display">Upper-Intermediate</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">Candidate: <strong id="cert-name-display" style="color: var(--text-color);">Name</strong></p>
+            
+            <div style="background: #f8fafc; padding: 20px; border-radius: var(--radius-md); margin-bottom: 25px; border: 1px solid #e2e8f0;">
+                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);" id="cert-desc-display">
+                    Description goes here.
+                </p>
+            </div>
+
+            <div class="cert-details">
+                <div class="detail-box">
+                    <strong style="display: block; font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase;">Total Score</strong>
+                    <span style="font-size: 1.5rem; font-weight: 700;" id="cert-score-display">0 / 35</span>
+                </div>
+                <div class="detail-box">
+                    <strong style="display: block; font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase;">Time Spent</strong>
+                    <span style="font-size: 1.5rem; font-weight: 700;" id="cert-time-display">00:00</span>
+                </div>
+            </div>
+
+            <button class="btn" onclick="window.location.href='index.html'" style="margin-top: 30px; width: 100%; justify-content: center;">Return to Platform</button>
+        </div>
+    </div>
+
+    <script src="js/data_placement.js"></script>
+    <script src="js/placement.js"></script>
+</body>
+</html>

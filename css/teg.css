@@ -164,6 +164,7 @@ h1, h2, h3, h4, h5 {
     background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
     opacity: 0;
     transition: opacity 0.3s;
+    pointer-events: none;
 }
 
 .level-card:hover {
@@ -185,6 +186,7 @@ h1, h2, h3, h4, h5 {
     height: 6px;
     background: transparent;
     transition: background-color 0.3s;
+    pointer-events: none;
 }
 
 .level-card.active {
@@ -296,7 +298,8 @@ h1, h2, h3, h4, h5 {
     box-shadow: var(--shadow-glass);
     margin-bottom: 40px;
     position: relative;
-    z-index: 10;
+    /* Removed z-index to fix Safari touch bug */
+    -webkit-transform: translate3d(0,0,0); /* Hardware acceleration fixes touch bugs on blur */
 }
 
 .display-card-header {
@@ -712,9 +715,17 @@ footer {
     }
     
     .display-card {
-        flex-direction: column;
+        padding: 20px; /* Reduced padding on mobile */
     }
     
+    .teg-container {
+        padding-top: 80px; /* Reduced top padding to avoid header overlap */
+    }
+    
+    .teg-input {
+        width: 100%; /* Better width on mobile */
+    }
+
     #grammar-sidebar-container {
         width: 100% !important;
         border-right: none !important;

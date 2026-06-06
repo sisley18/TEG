@@ -272,7 +272,11 @@ function speakPhrase(text) {
     window.stopAudio();
     if (!text) return;
 
-    const cleaned = text
+    // Convert HH:MM time formats to Military Time to be read correctly
+    let processedText = text.replace(/\b([0-9]|0[0-9]|1[0-9]|2[0-3]):00\b/g, '$1 hundred hours');
+    processedText = processedText.replace(/\b([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])\b/g, '$1 $2 hours');
+
+    const cleaned = processedText
         .replace(/<[^>]+>/g, ' ')
         .replace(/\([^)]*\)/g, '')
         .replace(/\[[^\]]*\]/g, '')

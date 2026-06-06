@@ -105,12 +105,27 @@
             <button class="tab-btn" id="tab-btn-idiom_challenge" onclick="setTab('idiom_challenge')">💡 Collocations</button>
             <button class="tab-btn" id="tab-btn-phrasal_verbs" onclick="setTab('phrasal_verbs')">🗣️ Phrasal Verbs</button>
             <button class="tab-btn" id="tab-btn-lexical_fields" onclick="setTab('lexical_fields')">🏢 Lexical Fields</button>
+            <button class="tab-btn" id="tab-btn-grammar_topics" onclick="setTab('grammar_topics')">📘 Grammar Topics</button>
         </div>
 
         <!-- Main Display Card -->
-        <div class="display-card">
-            <div class="display-card-header">
-                <div>
+        <div class="display-card" style="display: flex; gap: 30px; align-items: flex-start;">
+            <!-- Grammar Sidebar (Hidden by default) -->
+            <div id="grammar-sidebar-container" style="display: none; flex-direction: column; gap: 8px; width: 250px; border-right: 1px solid var(--border-color); padding-right: 20px; flex-shrink: 0;">
+                <h3 style="margin-bottom: 10px; color: var(--text-primary); font-family: var(--font-heading);">Grammar Topics</h3>
+                <button class="option-btn" id="gt-btn-comparatives" onclick="setGrammarTopic('comparatives')">Comparatives & Superlatives</button>
+                <button class="option-btn" id="gt-btn-conditionals" onclick="setGrammarTopic('conditionals')">Conditionals</button>
+                <button class="option-btn" id="gt-btn-modals" onclick="setGrammarTopic('modals')">Modals</button>
+                <button class="option-btn" id="gt-btn-passive" onclick="setGrammarTopic('passive')">Passive Voice & Causative</button>
+                <button class="option-btn" id="gt-btn-reported" onclick="setGrammarTopic('reported')">Reported Speech</button>
+                <button class="option-btn" id="gt-btn-gerunds" onclick="setGrammarTopic('gerunds')">Gerunds & Infinitives</button>
+                <button class="option-btn" id="gt-btn-relative" onclick="setGrammarTopic('relative')">Relative Clauses</button>
+            </div>
+
+            <!-- Content Area -->
+            <div style="flex: 1; width: 100%; min-width: 0;">
+                <div class="display-card-header">
+                    <div>
                     <h2 class="exercise-title" id="exercise-title">Word Formation</h2>
                     <p class="exercise-description" id="exercise-description">Change the word in brackets to complete the sentence.</p>
                     <div id="lexical-dropdown-container" style="display: none; margin-top: 15px;">
@@ -145,6 +160,7 @@
                     <button class="btn" onclick="shuffleCurrent()">🔀 Shuffle Items</button>
                 </div>
             </div>
+            </div> <!-- End Content Area -->
         </div>
     </div>
 
@@ -174,6 +190,7 @@
     <script src="js/data_teg_b1b2.js"></script>
     <script src="js/data_teg_c1c2.js"></script>
     <script src="js/data_lexical_fields.js"></script>
+    <script src="js/data_grammar_topics.js"></script>
     <!-- Load Logic -->
     <script src="js/teg.js"></script>
 </body>

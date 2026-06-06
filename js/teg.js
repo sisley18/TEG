@@ -126,6 +126,31 @@ function setTab(tab) {
         activeTabBtn.classList.add('active');
     }
     
+    // Auto-select first grammar topic if none is selected
+    if (tab === 'grammar_topics' && typeof currentGrammarTopic === 'undefined') {
+        currentGrammarTopic = 'comparatives';
+    }
+    
+    loadActiveExercise();
+}
+
+let currentGrammarTopic = 'comparatives';
+
+function setGrammarTopic(topic) {
+    currentGrammarTopic = topic;
+    
+    // Update active state on sidebar buttons
+    document.querySelectorAll('#grammar-sidebar-container .option-btn').forEach(btn => {
+        btn.classList.remove('selected');
+        btn.style.borderColor = 'var(--border-color)';
+    });
+    
+    const activeBtn = document.getElementById(`gt-btn-${topic}`);
+    if (activeBtn) {
+        activeBtn.classList.add('selected');
+        activeBtn.style.borderColor = 'var(--level-color, var(--accent-electric))';
+    }
+    
     loadActiveExercise();
 }
 
@@ -144,10 +169,15 @@ function getLevelData() {
 function loadActiveExercise() {
     let exercise;
     let key;
-    const dropdown = document.getElementById('lexical-dropdown-container');
+    const lexicalDropdown = document.getElementById('lexical-dropdown-container');
+    const grammarSidebar = document.getElementById('grammar-sidebar-container');
+    
+    // Hide specialized containers by default
+    if (lexicalDropdown) lexicalDropdown.style.display = 'none';
+    if (grammarSidebar) grammarSidebar.style.display = 'none';
     
     if (currentTab === 'lexical_fields') {
-        if (dropdown) dropdown.style.display = 'block';
+        if (lexicalDropdown) lexicalDropdown.style.display = 'block';
         const field = document.getElementById('lexical-field-select') ? document.getElementById('lexical-field-select').value : 'programming';
         
         if (!tegLexicalData || !tegLexicalData[currentLevel] || !tegLexicalData[currentLevel][field]) {
@@ -156,9 +186,26 @@ function loadActiveExercise() {
         }
         exercise = tegLexicalData[currentLevel][field];
         key = `${currentLevel}_lexical_fields_${field}`;
-    } else {
-        if (dropdown) dropdown.style.display = 'none';
         
+    } else if (currentTab === 'grammar_topics') {
+        if (grammarSidebar) {
+            grammarSidebar.style.display = 'flex';
+            // Ensure the correct button is highlighted initially
+            document.querySelectorAll('#grammar-sidebar-container .option-btn').forEach(btn => btn.classList.remove('selected'));
+            const activeBtn = document.getElementById(`gt-btn-${currentGrammarTopic}`);
+            if (activeBtn) activeBtn.classList.add('selected');
+        }
+        
+        if (typeof tegGrammarData === 'undefined' || !tegGrammarData[currentLevel] || !tegGrammarData[currentLevel][currentGrammarTopic]) {
+            console.error("Grammar data not found for", currentLevel, currentGrammarTopic);
+            // Fallback empty exercise if data file isn't loaded yet
+            exercise = { title: "Coming Soon", description: "This topic is currently being added.", items: [] };
+        } else {
+            exercise = tegGrammarData[currentLevel][currentGrammarTopic];
+        }
+        key = `${currentLevel}_grammar_topics_${currentGrammarTopic}`;
+        
+    } else {
         const levelData = getLevelData();
         if (!levelData || !levelData.exercises[currentTab]) {
             console.error("Data not found for", currentLevel, currentTab);
@@ -734,6 +781,9 @@ function resetLevel() {
             const field = document.getElementById('lexical-field-select').value;
             key = `${currentLevel}_lexical_fields_${field}`;
             pctKey = `${currentLevel}_lexical_fields_${field}_percentage`;
+        } else if (currentTab === 'grammar_topics') {
+            key = `${currentLevel}_grammar_topics_${currentGrammarTopic}`;
+            pctKey = `${currentLevel}_grammar_topics_${currentGrammarTopic}_percentage`;
         }
         
         students[activeStudent].scores[key] = {};

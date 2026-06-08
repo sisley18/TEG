@@ -22,27 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setLevel('A1');
 });
 
-// Google Neural TTS variables
-let ttsAudio = new Audio();
-let ttsChunks = [];
-let currentTtsIdx = 0;
-let isTtsPlaying = false;
-
-function splitText(text, maxLen = 180) {
-    const chunks = [];
-    let rem = text;
-    while (rem.length > 0) {
-        if (rem.length <= maxLen) { chunks.push(rem); break; }
-        let idx = rem.lastIndexOf('. ', maxLen);
-        if (idx === -1) idx = rem.lastIndexOf('? ', maxLen);
-        if (idx === -1) idx = rem.lastIndexOf('! ', maxLen);
-        if (idx === -1) idx = rem.lastIndexOf(', ', maxLen);
-        if (idx === -1) idx = rem.lastIndexOf(' ', maxLen);
-        if (idx === -1) idx = maxLen;
-        chunks.push(rem.substring(0, idx + 1).trim());
-        rem = rem.substring(idx + 1).trim();
-    }
-    return chunks.filter(c => c.length > 0);
+// Web Speech API Voice Initialization
+if (window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
 }
 
 // Load student profile data from localStorage
@@ -298,10 +282,10 @@ function shuffleCurrent() {
     }
 }
 
-// Text to Speech using Google Translate TTS
+// Text to Speech using Web Speech API (Native)
 function speakPhrase(text) {
     window.stopAudio();
-    if (!text) return;
+    if (!text || !window.speechSynthesis) return;
 
     // Convert HH:MM time formats to Military Time to be read correctly
     let processedText = text.replace(/\b([0-9]|0[0-9]|1[0-9]|2[0-3]):00\b/g, '$1 hundred hours');
@@ -317,53 +301,47 @@ function speakPhrase(text) {
         .replace(/&quot;/g, '')
         .replace(/&#39;/g, "'")
         .replace(/&nbsp;/g, ' ')
-        .replace(/[^\w\s\.,\?!'-]/g, '') // Strip out weird characters to avoid breaking URL
+        .replace(/[^\w\s\.,\?!'-]/g, '') // Strip out weird characters
         .replace(/\s+/g, ' ')
         .trim();
 
-    ttsChunks = splitText(cleaned, 180);
-    currentTtsIdx = 0;
-    isTtsPlaying = true;
+    if (!cleaned) return;
 
-    if (ttsChunks.length > 0) {
-        playNextTtsChunk();
-    }
-}
-
-function playNextTtsChunk() {
-    if (currentTtsIdx >= ttsChunks.length) {
-        isTtsPlaying = false;
-        return;
-    }
-    const chunk = ttsChunks[currentTtsIdx];
-    // No slow speed parameter - it causes robotic/unnatural voice
-    // Explicitly request American English with en-US
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(chunk)}`;
+    const utterance = new SpeechSynthesisUtterance(cleaned);
     
-    ttsAudio.src = url;
-    ttsAudio.play().catch(err => {
-        console.error("Audio playback error:", err);
-        currentTtsIdx++;
-        playNextTtsChunk();
-    });
-}
-
-ttsAudio.onended = () => {
-    if (isTtsPlaying) {
-        currentTtsIdx++;
-        setTimeout(() => {
-            if (isTtsPlaying) {
-                playNextTtsChunk();
-            }
-        }, 400);
+    // Select best US English voice for a clear, professional American pronunciation
+    let voices = window.speechSynthesis.getVoices();
+    let bestVoice = null;
+    let preferredNames = ['Google US English', 'Samantha', 'Alex', 'Microsoft Zira', 'Microsoft Mark'];
+    
+    for (let name of preferredNames) {
+        bestVoice = voices.find(v => v.name.includes(name) && v.lang.startsWith('en-US'));
+        if (bestVoice) break;
     }
-};
+    
+    if (!bestVoice) {
+        bestVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en_US');
+    }
+    
+    if (!bestVoice) {
+        bestVoice = voices.find(v => v.lang.startsWith('en'));
+    }
+
+    if (bestVoice) {
+        utterance.voice = bestVoice;
+    }
+    
+    // Adjust rate for natural fluidity
+    utterance.rate = 0.95;
+    utterance.pitch = 1.0;
+    
+    window.speechSynthesis.speak(utterance);
+}
 
 window.stopAudio = function () {
-    ttsAudio.pause();
-    ttsChunks = [];
-    currentTtsIdx = 0;
-    isTtsPlaying = false;
+    if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
 };
 
 // Standard Questions Render (Cloze, Word Formation, Transformation, Error, Collocation Option Challenge)

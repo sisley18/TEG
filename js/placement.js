@@ -6,11 +6,12 @@ let timerInterval;
 let timeLeft = 15 * 60; // 15 minutes
 let testSubmitted = false;
 
-// Audio variables for Listening section
-let ttsAudio = new Audio();
-let ttsChunks = [];
-let currentTtsIdx = 0;
-let isTtsPlaying = false;
+// Web Speech API Initialization
+if (window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // Hide test initially, wait for Start button
@@ -211,66 +212,62 @@ function generateCertificate(score) {
 }
 
 // --- TTS LOGIC (Reused from TEG) ---
-function splitText(text, maxLen = 180) {
-    const chunks = [];
-    let rem = text;
-    while (rem.length > 0) {
-        if (rem.length <= maxLen) { chunks.push(rem); break; }
-        let idx = rem.lastIndexOf('. ', maxLen);
-        if (idx === -1) idx = rem.lastIndexOf(', ', maxLen);
-        if (idx === -1) idx = rem.lastIndexOf(' ', maxLen);
-        if (idx === -1) idx = maxLen;
-        chunks.push(rem.substring(0, idx + 1).trim());
-        rem = rem.substring(idx + 1).trim();
-    }
-    return chunks.filter(c => c.length > 0);
-}
-
 function speakPhrase(text) {
     window.stopAudio();
-    if (!text) return;
+    if (!text || !window.speechSynthesis) return;
+
+    // Convert HH:MM time formats to Military Time to be read correctly
+    let processedText = text.replace(/\b([0-9]|0[0-9]|1[0-9]|2[0-3]):00\b/g, '$1 hundred hours');
+    processedText = processedText.replace(/\b([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])\b/g, '$1 $2 hours');
+
+    const cleaned = processedText
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\([^)]*\)/g, '')
+        .replace(/\[[^\]]*\]/g, '')
+        .replace(/_+/g, ', ')
+        .replace(/[\/\(\)\[\]]/g, ' ')
+        .replace(/&amp;/g, 'and')
+        .replace(/&quot;/g, '')
+        .replace(/&#39;/g, "'")
+        .replace(/&nbsp;/g, ' ')
+        .replace(/[^\w\s\.,\?!'-]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    if (!cleaned) return;
+
+    const utterance = new SpeechSynthesisUtterance(cleaned);
     
-    // Normal speed for placement test
-    ttsChunks = splitText(text, 180);
-    currentTtsIdx = 0;
-    isTtsPlaying = true;
-
-    if (ttsChunks.length > 0) {
-        playNextTtsChunk();
-    }
-}
-
-function playNextTtsChunk() {
-    if (currentTtsIdx >= ttsChunks.length) {
-        isTtsPlaying = false;
-        return;
-    }
-    const chunk = ttsChunks[currentTtsIdx];
-    // American voice
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(chunk)}`;
+    // Select best US English voice for a clear, professional American pronunciation
+    let voices = window.speechSynthesis.getVoices();
+    let bestVoice = null;
+    let preferredNames = ['Google US English', 'Samantha', 'Alex', 'Microsoft Zira', 'Microsoft Mark'];
     
-    ttsAudio.src = url;
-    ttsAudio.play().catch(err => {
-        console.error("Audio playback error:", err);
-        currentTtsIdx++;
-        playNextTtsChunk();
-    });
-}
-
-ttsAudio.onended = () => {
-    if (isTtsPlaying) {
-        currentTtsIdx++;
-        setTimeout(() => {
-            if (isTtsPlaying) {
-                playNextTtsChunk();
-            }
-        }, 400);
+    for (let name of preferredNames) {
+        bestVoice = voices.find(v => v.name.includes(name) && v.lang.startsWith('en-US'));
+        if (bestVoice) break;
     }
-};
+    
+    if (!bestVoice) {
+        bestVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en_US');
+    }
+    
+    if (!bestVoice) {
+        bestVoice = voices.find(v => v.lang.startsWith('en'));
+    }
+
+    if (bestVoice) {
+        utterance.voice = bestVoice;
+    }
+    
+    utterance.rate = 0.95;
+    utterance.pitch = 1.0;
+    
+    window.speechSynthesis.speak(utterance);
+}
 
 window.stopAudio = function () {
-    ttsAudio.pause();
-    ttsChunks = [];
-    currentTtsIdx = 0;
-    isTtsPlaying = false;
+    if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
 };

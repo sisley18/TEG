@@ -880,3 +880,63 @@ footer {
     align-items: center;
     gap: 5px;
 }
+
+/* ── Print / PDF Styles ─────────────────────────────────────────── */
+@media print {
+    header, footer, .student-bar, .level-ladder, .tabs-container, 
+    .control-row, .timer-widget, .badge-display, .speaker-btn, 
+    #grammar-sidebar-container, .student-slots, label {
+        display: none !important;
+    }
+    
+    body {
+        background: none !important;
+        color: black !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .teg-container {
+        padding-top: 0 !important;
+    }
+    
+    .display-card {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        background: none !important;
+    }
+
+    .question-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        border: 1px solid #ccc !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        margin-bottom: 15px !important;
+    }
+
+    .explanation-box {
+        display: block !important; /* Always show answers when generating PDF */
+        background: #f8f9fa !important;
+        border-left: 4px solid #475569 !important;
+        color: #333 !important;
+    }
+
+    .option-btn {
+        border: 1px solid #ccc !important;
+        background: #fff !important;
+        box-shadow: none !important;
+    }
+
+    .teg-input {
+        border: 1px solid #666 !important;
+        background: #fff !important;
+    }
+    
+    .memory-card {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+

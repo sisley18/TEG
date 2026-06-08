@@ -154,6 +154,7 @@
             <div class="control-row">
                 <div class="control-group">
                     <button class="btn" style="background: var(--gradient-teal); border-color: transparent;" onclick="checkAll()">Check Answers ✅</button>
+                    <button class="btn" style="background: #3b82f6; color: white; border-color: transparent;" onclick="window.print()">📄 PDF con Respuestas</button>
                     <button class="btn" onclick="resetLevel()">Reset Section 🔄</button>
                 </div>
                 <div class="control-group">
@@ -176,7 +177,10 @@
                 </div>
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 30px;" id="modal-badge-desc">Excellent work! You've passed this section.</p>
-            <button class="btn" onclick="closeModal()" style="width: 100%; justify-content: center; background: rgba(255,255,255,0.05);">Continue Practice</button>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button class="btn" onclick="continueToNextExercise()" style="width: 100%; justify-content: center; background: var(--accent-gold); color: #000; font-weight: 700;">Continue to the next exercise ➔</button>
+                <button class="btn" onclick="closeModal()" style="width: 100%; justify-content: center; background: rgba(255,255,255,0.05);">Close Modal</button>
+            </div>
         </div>
     </div>
 

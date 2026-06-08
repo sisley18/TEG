@@ -343,7 +343,8 @@ function playNextTtsChunk() {
     }
     
     const chunk = ttsTextChunks[currentTtsChunkIndex];
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(chunk)}`;
+    // Use Youdao TTS API (type=2 is American English) to bypass Google TTS blocking
+    const url = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(chunk)}&type=2`;
     
     ttsAudioElement.src = url;
     ttsAudioElement.play().catch(err => {

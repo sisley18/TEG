@@ -11,6 +11,7 @@ const tegDataB1B2 = {
             word_formation: {
                 title: "Word Formation (B1)",
                 description: "Change the word in brackets to complete the sentence correctly.",
+                grammarTheory: "📖 <strong>Word Formation (B1)</strong> — At this level, longer and more complex suffixes appear: ✦ <em>-ment</em> (develop → development) ✦ <em>-ance/-ence</em> (confident → confidence) ✦ <em>-ity/-ty</em> (able → ability) ✦ <em>-tion/-sion</em> (decide → decision). Also learn common prefixes: <em>un- (unhappy), dis- (disappear), mis- (misunderstand)</em>. Context clues (noun/adjective/adverb position) will tell you which form to use.",
                 items: [
                     { q: "The company announced the _____ (DEVELOP) of a new product.", correct: "development", explanation: "Add suffix '-ment' to verb 'develop' to create the noun." },
                     { q: "It was a very _____ (SUCCESS) project.", correct: "successful", explanation: "Add '-ful' to noun 'success' to form the adjective." },
@@ -27,6 +28,7 @@ const tegDataB1B2 = {
             open_cloze: {
                 title: "Open Cloze (B1)",
                 description: "Fill the blank with exactly ONE suitable word (pronouns, prepositions, articles, etc.).",
+                grammarTheory: "📖 <strong>Open Cloze (B1)</strong> — Focus on: ✦ <em>for/since/ago</em> with Perfect tenses ✦ relative pronouns (<em>whose, where, which</em>) ✦ fixed phrases (<em>in spite of, look forward to, in order to, succeed in</em>) ✦ Second Conditional (<em>If I were you...</em>) ✦ passive modal (<em>must be + past participle</em>). Read the whole sentence first, identify the grammatical function, then choose.",
                 items: [
                     { q: "I have been living here _____ three years.", correct: "for", explanation: "Use 'for' to specify the duration of time." },
                     { q: "He is the man _____ car was stolen last night.", correct: "whose", explanation: "Relative possessive pronoun 'whose' indicates ownership." },
@@ -43,6 +45,7 @@ const tegDataB1B2 = {
             tenses_cloze: {
                 title: "Tenses Cloze (B1)",
                 description: "Select the correct tense. (Present Perfect vs Past Simple)",
+                grammarTheory: "📖 <strong>Present Perfect vs Past Simple</strong> — Use <em>Present Perfect</em> for: ✦ experiences (<em>Have you ever...?</em>) ✦ recent actions with present results (<em>He has lost his keys → can't open the door</em>) ✦ unfinished periods (<em>since, for, yet, already, just</em>). Use <em>Past Simple</em> for: ✦ completed actions at a specific time (<em>yesterday, ago, last week, in 2020, when</em>). Key signal: if the time is stated precisely → Past Simple.",
                 items: [
                     { q: "I _____ the new superhero movie at the theater yesterday.", options: ["saw", "have seen", "was seeing"], correct: "saw", explanation: "Use Past Simple for a completed action at a specific time in the past ('yesterday')." },
                     { q: "She _____ in this apartment since she moved to the city.", options: ["lived", "has lived", "lives"], correct: "has lived", explanation: "Use Present Perfect with 'since' for actions that started in the past and continue to the present." },
@@ -59,6 +62,7 @@ const tegDataB1B2 = {
             sentence_transformation: {
                 title: "Sentence Transformation (B1)",
                 description: "Complete the second sentence so it means the same as the first. Use 2 to 5 words.",
+                grammarTheory: "📖 <strong>Sentence Transformation (B1)</strong> — Key B1 patterns: ✦ Passive voice (<em>is/are being built</em>) ✦ Wish + Past Simple for present regret (<em>I wish I spoke French</em>) ✦ Reported speech (<em>he said that he had lost → past perfect shift</em>) ✦ such/so for emphasis ✦ too/enough ✦ in spite of + gerund. Always use exactly 2–5 words and do NOT change contractions or split words.",
                 items: [
                     { q: "They are building a new road in the city.\nA new road _____ in the city.", correct: "is being built", explanation: "Present continuous passive: 'is/are being + past participle'." },
                     { q: "I last saw him three years ago.\nI _____ him for three years.", correct: "have not seen", explanation: "'Last saw X ago' translates to present perfect negative 'have not seen'." },
@@ -75,6 +79,7 @@ const tegDataB1B2 = {
             error_correction: {
                 title: "Error Correction (B1)",
                 description: "Identify and correct the single error in the sentence.",
+                grammarTheory: "📖 <strong>Error Correction (B1)</strong> — Common B1 traps: ✦ Present Perfect Continuous (<em>He is working here since → has been working</em>) ✦ Second Conditional if-clause (<em>If I would have → had</em>) ✦ 'suggest' + gerund, not infinitive ✦ adjective + enough word order (<em>enough big → big enough</em>) ✦ preposition + gerund (<em>used to waking, interested in</em>) ✦ double negatives (<em>didn't see nobody → anybody</em>).",
                 items: [
                     { q: "He is working here since last summer.", correct: "has been working", explanation: "Use present perfect continuous for an action starting in the past and continuing to the present." },
                     { q: "If I would have more money, I would buy a car.", correct: "had", explanation: "In the 'if' clause of a second conditional, use past simple ('had') instead of 'would'." },
@@ -91,6 +96,7 @@ const tegDataB1B2 = {
             vocab_matching: {
                 title: "Vocabulary Matching (B1)",
                 description: "Match the words on the left with their correct definitions on the right.",
+                grammarTheory: "📖 <strong>Vocabulary Matching (B1)</strong> — B1 vocabulary includes more abstract nouns and formal words. Strategy: identify the word class (noun/adjective/adverb), look for key terms in the definition, and use process of elimination. Note near-synonyms — definitions will pinpoint the exact word. Flip two cards and see if the word matches its definition!",
                 pairs: [
                     { word: "Accidentally", def: "By chance; not on purpose." },
                     { word: "Generous", def: "Willing to give money, help, or time freely." },
@@ -105,6 +111,7 @@ const tegDataB1B2 = {
             idiom_challenge: {
                 title: "Collocation & Expression Challenge (B1)",
                 description: "Complete the everyday expression or collocation with the correct word.",
+                grammarTheory: "📖 <strong>Collocations & Idioms (B1)</strong> — At B1, many collocations involve phrasal verbs used as idioms: <em>make up your mind, run out of, keep an eye on, put off, bring up (raise a child), put up with (tolerate), break up with, take advantage of</em>. Notice that the same verb (<em>make, put, take</em>) collocates with many different nouns — learn them together as fixed chunks!",
                 items: [
                     { q: "I need to _____ my mind about which university to choose.", options: ["make up", "do up", "take up"], correct: 0, explanation: "To 'make up one's mind' means to make a decision." },
                     { q: "He always tries to _____ his best in exams.", options: ["do", "make", "give"], correct: 0, explanation: "The collocation is 'do one's best'." },
@@ -121,6 +128,7 @@ const tegDataB1B2 = {
             phrasal_verbs: {
                 title: "Phrasal Verbs (B1)",
                 description: "Complete the sentence with the correct preposition or adverb to form a phrasal verb.",
+                grammarTheory: "📖 <strong>Phrasal Verbs (B1)</strong> — At B1 the particles become less predictable and the meanings more idiomatic. Key verbs: <em>look forward to</em> (anticipate — always + -ing!), <em>give up</em> (quit), <em>break down</em> (stop working), <em>make up</em> (invent), <em>run out of</em> (exhaust supply), <em>call off</em> (cancel). Some are intransitive (no object): <em>break down, grow up</em>. Others are transitive: <em>give up smoking, find out the answer</em>.",
                 items: [
                     { q: "I am really looking forward _____ seeing you next week.", correct: "to", explanation: "'Look forward to' means to anticipate with pleasure." },
                     { q: "She decided to give _____ smoking for her health.", correct: "up", explanation: "'Give up' means to stop doing something." },
@@ -144,6 +152,7 @@ const tegDataB1B2 = {
             word_formation: {
                 title: "Word Formation (B2)",
                 description: "Change the word in brackets to complete the sentence correctly.",
+                grammarTheory: "📖 <strong>Word Formation (B2)</strong> — At B2, negative prefixes are critical: ✦ <em>un-</em> (unhappy, unemployment) ✦ <em>in-/im-/il-/ir-</em> (illogical, irresponsible, impossible) ✦ <em>dis-</em> (disadvantage). Also: <em>-ship</em> (relationship), <em>-ity</em> (generosity), <em>-ance/-ence</em> (reluctance). A key rule: when you see a negative meaning, try the prefix family <em>un-/in-/im-/il-/ir-</em> based on the first letter of the root word.",
                 items: [
                     { q: "The government took measures to reduce _____ (EMPLOY).", correct: "unemployment", explanation: "Add prefix 'un-' and suffix '-ment' to form the noun 'unemployment'." },
                     { q: "She has an _____ (BELIEVE) talent for playing the violin.", correct: "unbelievable", explanation: "Add prefix 'un-' and suffix '-able' to form the adjective 'unbelievable'." },
@@ -160,6 +169,7 @@ const tegDataB1B2 = {
             open_cloze: {
                 title: "Open Cloze (B2)",
                 description: "Fill the blank with exactly ONE suitable word (pronouns, prepositions, articles, etc.).",
+                grammarTheory: "📖 <strong>Open Cloze (B2)</strong> — B2 targets advanced structures: ✦ <em>despite/despite + -ing</em> (no 'of'!) ✦ <em>such a/an + adjective + noun</em> ✦ <em>whose</em> (possessive relative) ✦ Inversion after negative adverbials (<em>Under no circumstances should...</em>) ✦ <em>hardly... when</em> ✦ verb + preposition collocations (<em>accused of, call off</em>) ✦ <em>would rather + subject + past subjunctive</em>. Always read the whole sentence before deciding.",
                 items: [
                     { q: "She succeeded in passing the exam _____ having a severe headache.", correct: "despite", explanation: "'Despite' is followed by a gerund or noun phrase without 'of'." },
                     { q: "It was _____ a hot day that we decided to go swimming.", correct: "such", explanation: "Use 'such + a/an + adjective + noun' for emphasis." },
@@ -176,6 +186,7 @@ const tegDataB1B2 = {
             tenses_cloze: {
                 title: "Tenses Cloze (B2)",
                 description: "Select the correct tense. (Past Perfect & Future Forms)",
+                grammarTheory: "📖 <strong>B2 Tenses</strong> — ✦ <em>Past Perfect</em> (<em>had + past participle</em>): earlier of two past actions. Key signal: <em>by the time, already, when</em>. ✦ <em>Future Perfect</em> (<em>will have + past participle</em>): action completed before a future point. Key signal: <em>by tomorrow/next year</em>. ✦ <em>Future Continuous</em> (<em>will be + -ing</em>): action in progress at a future moment. ✦ <em>Going to</em>: prediction based on visible evidence. ✦ <em>Will</em>: spontaneous decisions and promises.",
                 items: [
                     { q: "By the time we reached the airport, the airplane _____.", options: ["took off", "has taken off", "had taken off"], correct: "had taken off", explanation: "Use Past Perfect to show an action happened before another past action." },
                     { q: "I _____ my resume by tomorrow afternoon.", options: ["will finish", "will have finished", "am finishing"], correct: "will have finished", explanation: "Use Future Perfect with 'by' a future time to indicate a completed future action." },
@@ -192,6 +203,7 @@ const tegDataB1B2 = {
             sentence_transformation: {
                 title: "Sentence Transformation (B2)",
                 description: "Complete the second sentence so it means the same as the first. Use 2 to 5 words.",
+                grammarTheory: "📖 <strong>Sentence Transformation (B2)</strong> — Key patterns: ✦ <em>cannot have done</em> (negative deduction about the past) ✦ <em>might/may have + past participle</em> (past possibility) ✦ <em>unless = if not</em> ✦ Causative: <em>have/get something done</em> ✦ <em>due to + noun phrase</em> (replaces 'because') ✦ <em>in spite of + -ing</em> ✦ Passive reporting: <em>is thought/believed to have + past participle</em>. Count words carefully — contractions count as 2!",
                 items: [
                     { q: "I'm sure he didn't do it on purpose.\nHe _____ it on purpose.", correct: "cannot have done", explanation: "Use 'cannot have + past participle' for negative logical deduction about the past." },
                     { q: "It's possible that they missed the flight.\nThey _____ the flight.", correct: "might have missed", explanation: "Use 'might have' or 'may have' + past participle for past possibility." },
@@ -208,6 +220,7 @@ const tegDataB1B2 = {
             error_correction: {
                 title: "Error Correction (B2)",
                 description: "Identify and correct the single error in the sentence.",
+                grammarTheory: "📖 <strong>Error Correction (B2)</strong> — Watch for these B2 traps: ✦ <em>wish + past perfect</em> for past regret (<em>I wish I would have → had gone</em>) ✦ 'suggest' + that-clause, not object + infinitive ✦ <em>accused of</em> (not 'for') ✦ <em>despite</em> (never 'Despite of') ✦ <em>neither</em> is singular (<em>neither are → is</em>) ✦ <em>would rather + past subjunctive</em> ✦ 'news' = uncountable (<em>news were → was</em>) ✦ 'look forward to' + -ing.",
                 items: [
                     { q: "I wish I would have gone to the party last night.", correct: "had gone", explanation: "Regrets about the past are expressed with 'wish + past perfect'." },
                     { q: "He suggested us to take a break.", correct: "suggested that we take", explanation: "'Suggest' cannot be followed by an object pronoun and infinitive; use a 'that' clause or gerund instead." },
@@ -224,6 +237,7 @@ const tegDataB1B2 = {
             vocab_matching: {
                 title: "Vocabulary Matching (B2)",
                 description: "Match the words on the left with their correct definitions on the right.",
+                grammarTheory: "📖 <strong>Vocabulary Matching (B2)</strong> — B2 vocabulary includes abstract and formal words. Tips: ✦ Look for the word class (noun/adjective/adverb) in the definition ✦ Watch for near-synonyms and select the most precise match ✦ Use process of elimination after each successful match. Many B2 words are recognizable from Latin/French roots in academic or news contexts!",
                 pairs: [
                     { word: "Consequence", def: "A result or effect, typically one that is unwelcome." },
                     { word: "Inevitably", def: "As is certain to happen; unavoidably." },
@@ -238,6 +252,7 @@ const tegDataB1B2 = {
             idiom_challenge: {
                 title: "Collocation & Expression Challenge (B2)",
                 description: "Complete the everyday expression or collocation with the correct word.",
+                grammarTheory: "📖 <strong>Collocations & Idioms (B2)</strong> — At B2, idioms mix with multi-word phrasal expressions: <em>take up</em> a hobby, <em>stand up for</em> beliefs, <em>end up</em> somewhere, <em>look into</em> a matter, <em>take over</em> a company, <em>back out</em> of a promise. Strategy: think about the meaning of the whole expression — the particle often signals direction, completion, or relationship. When the options are close, think about the preposition or adverb that follows the noun.",
                 items: [
                     { q: "She decided to _____ up tennis to get some exercise.", options: ["take", "make", "go"], correct: 0, explanation: "To 'take up' a sport or hobby means to start it." },
                     { q: "He managed to _____ through the difficult exam despite the pressure.", options: ["get", "make", "pass"], correct: 0, explanation: "To 'get through' means to survive or pass a difficult situation." },
@@ -254,6 +269,7 @@ const tegDataB1B2 = {
             phrasal_verbs: {
                 title: "Phrasal Verbs (B2)",
                 description: "Complete the sentence with the correct preposition or adverb to form a phrasal verb.",
+                grammarTheory: "📖 <strong>Phrasal Verbs (B2)</strong> — B2 phrasal verbs are often formal or idiomatic: <em>put off</em> (postpone), <em>take up</em> (start a hobby), <em>break down</em> (stop functioning / collapse emotionally), <em>own up</em> (confess), <em>take over</em> (assume control), <em>come up with</em> (invent an idea), <em>put up with</em> (tolerate), <em>bring out</em> (launch a product), <em>turn out</em> (prove to be). Three-word phrasal verbs (<em>come up with, put up with</em>) are always inseparable — keep all three words together!",
                 items: [
                     { q: "The meeting was put _____ until next Wednesday.", correct: "off", explanation: "'Put off' means to postpone." },
                     { q: "I decided to take _____ tennis to keep fit.", correct: "up", explanation: "'Take up' a hobby means to start doing it." },

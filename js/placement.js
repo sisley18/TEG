@@ -246,7 +246,8 @@ function playNextTtsChunk() {
         return;
     }
     const chunk = ttsChunks[currentTtsIdx];
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=${encodeURIComponent(chunk)}`;
+    // American voice
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(chunk)}`;
     
     ttsAudio.src = url;
     ttsAudio.play().catch(err => {

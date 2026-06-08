@@ -237,6 +237,9 @@ function loadActiveExercise() {
     // Load student saved responses
     const studentSaved = students[activeStudent].scores[key] || {};
     
+    // Render Grammar Theory box if present
+    renderGrammarTheory(exercise, container);
+    
     if (currentTab === 'vocab_matching') {
         renderVocabularyMatching(exercise, container, studentSaved, key);
     } else {
@@ -249,6 +252,34 @@ function loadActiveExercise() {
 
 function resetIndices(key, count) {
     shuffledIndices[key] = Array.from({ length: count }, (_, i) => i);
+}
+
+// Render Grammar Theory tip box
+function renderGrammarTheory(exercise, container) {
+    // Remove any existing theory box first
+    const old = container.querySelector('.grammar-theory-box');
+    if (old) old.remove();
+    
+    if (!exercise.grammarTheory) return;
+    
+    const box = document.createElement('div');
+    box.className = 'grammar-theory-box';
+    
+    box.innerHTML = `
+        <div class="grammar-theory-header" onclick="this.parentElement.classList.toggle('open')">
+            <span class="grammar-theory-icon">📖</span>
+            <span class="grammar-theory-label">Grammar Tip &amp; Strategy</span>
+            <span class="grammar-theory-chevron">▸</span>
+        </div>
+        <div class="grammar-theory-body">
+            <p>${exercise.grammarTheory}</p>
+            <button class="speaker-btn grammar-theory-speak" onclick="speakPhrase(this.closest('.grammar-theory-box').querySelector('p').textContent)" title="Listen to the tip">
+                🔊 Listen
+            </button>
+        </div>
+    `;
+    
+    container.appendChild(box);
 }
 
 function shuffleCurrent() {
@@ -305,15 +336,9 @@ function playNextTtsChunk() {
         return;
     }
     const chunk = ttsChunks[currentTtsIdx];
-    
-    // Slow speed parameter for A1/A2
-    let speedParam = '';
-    if (['A1', 'A2'].includes(currentLevel)) {
-        speedParam = '&ttsspeed=0.24';
-    }
-    
+    // No slow speed parameter - it causes robotic/unnatural voice
     // Explicitly request American English with en-US
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(chunk)}${speedParam}`;
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(chunk)}`;
     
     ttsAudio.src = url;
     ttsAudio.play().catch(err => {

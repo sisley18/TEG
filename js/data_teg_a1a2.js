@@ -11,6 +11,7 @@ const tegDataA1A2 = {
             word_formation: {
                 title: "Word Formation (A1)",
                 description: "Change the word in brackets to complete the sentence correctly.",
+                grammarTheory: "📖 <strong>Word Formation</strong> means changing one word into another by adding <em>prefixes</em> (before: <em>un-</em>) or <em>suffixes</em> (after: <em>-er, -ly, -ful, -ness</em>). For example: <em>help → helper, helpful, helpfully</em>. You need to decide if the sentence needs a noun, adjective, or adverb.",
                 items: [
                     { q: "My sister is a very good _____ (SING).", correct: "singer", explanation: "Add '-er' to the verb 'sing' to make the noun for a person." },
                     { q: "It is a beautiful, _____ (SUN) day today.", correct: "sunny", explanation: "Change the noun 'sun' to the adjective 'sunny'." },
@@ -27,6 +28,7 @@ const tegDataA1A2 = {
             open_cloze: {
                 title: "Open Cloze (A1)",
                 description: "Fill the blank with exactly ONE suitable word (pronouns, prepositions, articles, etc.).",
+                grammarTheory: "📖 <strong>Open Cloze</strong> tests your knowledge of grammar words — articles (<em>a, an, the</em>), prepositions (<em>in, on, at, by</em>), pronouns (<em>he, she, it, your</em>), and conjunctions (<em>and, but, or</em>). Always read the whole sentence and think about what type of word is missing.",
                 items: [
                     { q: "I live _____ London with my parents.", correct: "in", explanation: "We use the preposition 'in' for cities and countries." },
                     { q: "She has _____ apple and a banana for breakfast.", correct: "an", explanation: "Use the indefinite article 'an' before words starting with a vowel sound." },
@@ -43,6 +45,7 @@ const tegDataA1A2 = {
             tenses_cloze: {
                 title: "Tenses Cloze (A1)",
                 description: "Select the correct present tense form of the verb. (Present Simple or Continuous)",
+                grammarTheory: "📖 <strong>Present Simple</strong> describes habits, facts, and routines. Use with: <em>always, usually, every day, never</em>. Form: <em>I/You/We/They play · He/She/It plays</em>.<br>📖 <strong>Present Continuous</strong> describes actions happening right now or temporary situations. Use with: <em>now, at the moment, right now, Look!, Listen!</em>. Form: <em>am/is/are + verb-ing</em>.",
                 items: [
                     { q: "My mom _____ dinner in the kitchen right now.", options: ["cook", "is cooking", "cooks"], correct: "is cooking", explanation: "Use Present Continuous for actions happening at the moment of speaking ('right now')." },
                     { q: "I usually _____ the subway to work every morning.", options: ["take", "am taking", "takes"], correct: "take", explanation: "Use Present Simple for routines and habits ('usually', 'every morning')." },
@@ -59,6 +62,7 @@ const tegDataA1A2 = {
             sentence_transformation: {
                 title: "Sentence Transformation (A1)",
                 description: "Complete the second sentence so it means the same as the first. Use 1 to 3 words.",
+                grammarTheory: "📖 <strong>Sentence Transformation</strong> asks you to express the same idea using different grammar. Common patterns: possessive adjectives (<em>belongs to me → my</em>), <em>there is/are</em> for existence, opposite adjectives (<em>tall ↔ short</em>), and adjective vs. adverb (<em>fast runner → runs fast</em>). Never change the meaning!",
                 items: [
                     { q: "This car belongs to me.\nThis is _____ car.", correct: "my", explanation: "'Belongs to me' is rephrased using the possessive adjective 'my'." },
                     { q: "We have two cats.\nThere _____ in our house.", correct: "are two cats", explanation: "Use 'There are' to express existence in the plural form." },
@@ -75,6 +79,7 @@ const tegDataA1A2 = {
             error_correction: {
                 title: "Error Correction (A1)",
                 description: "Identify and correct the single error in the sentence.",
+                grammarTheory: "📖 <strong>Error Correction</strong> — each sentence has exactly ONE mistake. Watch for these common A1 errors: ✦ third-person -s (<em>he live → lives</em>) ✦ verb to be for age (<em>I have 12 years → I am 12</em>) ✦ much/many (<em>much books → many books</em>) ✦ modal + bare infinitive (<em>can to speak → can speak</em>) ✦ irregular adverbs (<em>drives very good → well</em>).",
                 items: [
                     { q: "He live in Madrid with his wife.", correct: "lives", explanation: "Third-person singular 'he' requires 'lives' in present simple." },
                     { q: "She don't like milk.", correct: "doesn't", explanation: "Use 'doesn't' (does not) for third-person singular negative." },
@@ -91,6 +96,7 @@ const tegDataA1A2 = {
             vocab_matching: {
                 title: "Vocabulary Matching (A1)",
                 description: "Match the words on the left with their correct definitions on the right.",
+                grammarTheory: "📖 <strong>Vocabulary Matching</strong> — flip the cards and match each word with its definition. Look for key concepts in the definition: the topic (people, places, objects) and what it does or means. Flip two cards at a time — if they match, they stay open!",
                 pairs: [
                     { word: "Library", def: "A place where you can borrow books." },
                     { word: "Chef", def: "A professional cook in a restaurant." },
@@ -105,6 +111,7 @@ const tegDataA1A2 = {
             idiom_challenge: {
                 title: "Collocation & Expression Challenge (A1)",
                 description: "Complete the everyday expression or collocation with the correct word.",
+                grammarTheory: "📖 <strong>Collocations</strong> are words that naturally go together in English. You cannot always translate them directly — you simply have to learn them as chunks. Key A1 collocations: <em>make/do/take/have + noun</em>. Examples: <em>make my bed, do homework, take a photo, have lunch</em>. When in doubt, say the phrase aloud — the right word will sound more natural!",
                 items: [
                     { q: "I always _____ my bed in the morning.", options: ["make", "do", "take"], correct: 0, explanation: "The correct collocation is 'make my bed'." },
                     { q: "We usually _____ lunch at 1:00 PM.", options: ["take", "have", "do"], correct: 1, explanation: "We say 'have lunch/breakfast/dinner'." },
@@ -121,6 +128,7 @@ const tegDataA1A2 = {
             phrasal_verbs: {
                 title: "Phrasal Verbs (A1)",
                 description: "Complete the sentence with the correct preposition or adverb to form a phrasal verb.",
+                grammarTheory: "📖 <strong>Phrasal Verbs</strong> are verbs combined with a preposition or adverb to create a new meaning. They are very common in everyday spoken English. Key A1 examples: <em>wake up, sit down, turn on/off, put on, take off, look out</em>. The particle (up/down/on/off/in/out) completely changes the meaning of the base verb!",
                 items: [
                     { q: "I usually wake _____ at 7:00 AM.", correct: "up", explanation: "The phrasal verb is 'wake up'." },
                     { q: "Please sit _____ and open your books.", correct: "down", explanation: "The phrasal verb is 'sit down'." },
@@ -144,6 +152,7 @@ const tegDataA1A2 = {
             word_formation: {
                 title: "Word Formation (A2)",
                 description: "Change the word in brackets to complete the sentence correctly.",
+                grammarTheory: "📖 <strong>Word Formation (A2)</strong> — Build on A1 patterns and add: ✦ <em>-ous</em> (danger → dangerous) ✦ <em>-tion/-ation</em> (inform → information) ✦ <em>-ing/-ed</em> adjectives (bore → boring/bored). Remember: '-ing' describes things (<em>a boring film</em>), '-ed' describes feelings (<em>I felt bored</em>). Check what role the word plays in the sentence — noun, adjective, or adverb.",
                 items: [
                     { q: "The city was very _____ (NOISE) last night.", correct: "noisy", explanation: "Change the noun 'noise' to the adjective 'noisy'." },
                     { q: "She answered all the questions _____ (EASY).", correct: "easily", explanation: "Change 'easy' to adverb 'easily'." },
@@ -160,6 +169,7 @@ const tegDataA1A2 = {
             open_cloze: {
                 title: "Open Cloze (A2)",
                 description: "Fill the blank with exactly ONE suitable word (pronouns, prepositions, articles, etc.).",
+                grammarTheory: "📖 <strong>Open Cloze (A2)</strong> — At this level the missing words include: ✦ Present Perfect words (<em>ever, yet, already, for, since</em>) ✦ comparatives (<em>than</em>) ✦ purpose (<em>to + infinitive</em>) ✦ relative pronouns (<em>where, who, which</em>) ✦ conditionals (<em>will</em> in first conditional). Always check the tense and structure around the gap.",
                 items: [
                     { q: "Have you _____ been to Italy?", correct: "ever", explanation: "Use 'ever' in present perfect questions about experiences." },
                     { q: "I am going to the supermarket _____ buy some fruit.", correct: "to", explanation: "Use the infinitive particle 'to' to express purpose." },
@@ -176,6 +186,7 @@ const tegDataA1A2 = {
             tenses_cloze: {
                 title: "Tenses Cloze (A2)",
                 description: "Select the correct past tense form of the verb. (Past Simple or Continuous)",
+                grammarTheory: "📖 <strong>Past Simple</strong> = a completed action at a specific time. Use with: <em>yesterday, ago, last night/week, in 2020</em>. Form: <em>played, went, didn't go</em>.<br>📖 <strong>Past Continuous</strong> = an action in progress when another (shorter) action interrupted it, or two actions happening simultaneously. Use with: <em>while, when</em>. Form: <em>was/were + verb-ing</em>. Key pattern: <em>I was walking (continuous) when it started (simple) to rain.</em>",
                 items: [
                     { q: "I _____ to the store when it started to rain.", options: ["walked", "was walking", "walk"], correct: "was walking", explanation: "Use Past Continuous for a longer action interrupted by a shorter action." },
                     { q: "We _____ New York for our vacation last summer.", options: ["were visiting", "visited", "visit"], correct: "visited", explanation: "Use Past Simple for completed actions at a specific time in the past." },
@@ -192,6 +203,7 @@ const tegDataA1A2 = {
             sentence_transformation: {
                 title: "Sentence Transformation (A2)",
                 description: "Complete the second sentence so it means the same as the first. Use 1 to 3 words.",
+                grammarTheory: "📖 <strong>Sentence Transformation (A2)</strong> — New patterns at this level: ✦ <em>too + adjective → not + adjective + enough</em> (too young = not old enough) ✦ <em>first time → never... before</em> ✦ <em>not as + adjective + as</em> (cheaper than = not as expensive as) ✦ modal advice (<em>should not</em>) ✦ Past Continuous after 'while'. Always count your words — use only 1 to 3!",
                 items: [
                     { q: "I visited Rome two years ago.\nI was in Rome two _____.", correct: "years ago", explanation: "Rephrase 'visited Rome two years ago' into 'was in Rome two years ago'." },
                     { q: "There is a kitchen in the flat.\nThe flat _____ a kitchen.", correct: "has", explanation: "'There is X in Y' means 'Y has X'." },
@@ -208,6 +220,7 @@ const tegDataA1A2 = {
             error_correction: {
                 title: "Error Correction (A2)",
                 description: "Identify and correct the single error in the sentence.",
+                grammarTheory: "📖 <strong>Error Correction (A2)</strong> — Watch for these A2 traps: ✦ Present Perfect vs Past Simple (<em>I have seen him yesterday ✗ → I saw him</em>) ✦ irregular comparatives (<em>more bad → worse</em>) ✦ gerund after prepositions (<em>look forward to meet → meeting</em>) ✦ 'every' + singular noun (<em>every students → student</em>) ✦ 'say' vs 'tell' (<em>he said me → told me</em>).",
                 items: [
                     { q: "I have seen him yesterday.", correct: "saw", explanation: "Use past simple 'saw' for a specific finished time ('yesterday')." },
                     { q: "He is more bad than his classmate.", correct: "worse", explanation: "The comparative of the irregular adjective 'bad' is 'worse'." },
@@ -224,6 +237,7 @@ const tegDataA1A2 = {
             vocab_matching: {
                 title: "Vocabulary Matching (A2)",
                 description: "Match the words on the left with their correct definitions on the right.",
+                grammarTheory: "📖 <strong>Vocabulary Matching (A2)</strong> — Look for clues in the definition: the category (people, time, documents, places) and the key action or property. A2 words often relate to travel, everyday life, and health. Use elimination — once you match a pair correctly, it stays open and narrows down your remaining choices!",
                 pairs: [
                     { word: "Passenger", def: "A person traveling in a train, bus, or car." },
                     { word: "Century", def: "A period of one hundred years." },
@@ -238,6 +252,7 @@ const tegDataA1A2 = {
             idiom_challenge: {
                 title: "Collocation & Expression Challenge (A2)",
                 description: "Complete the everyday expression or collocation with the correct word.",
+                grammarTheory: "📖 <strong>Collocations (A2)</strong> — At A2, focus on verb + noun collocations related to decisions, communication, and social situations: <em>make a decision, keep in touch, give someone a hand, lose one's way, make an appointment, catch the bus</em>. A useful trick: if two verbs seem correct, think about the noun that follows — it usually points to only one.",
                 items: [
                     { q: "Could you please _____ me a hand with this bag?", options: ["give", "make", "take"], correct: 0, explanation: "To 'give someone a hand' means to help them." },
                     { q: "I always _____ in touch with my childhood friends.", options: ["keep", "hold", "save"], correct: 0, explanation: "To 'keep in touch' is to maintain communication." },
@@ -254,6 +269,7 @@ const tegDataA1A2 = {
             phrasal_verbs: {
                 title: "Phrasal Verbs (A2)",
                 description: "Complete the sentence with the correct preposition or adverb to form a phrasal verb.",
+                grammarTheory: "📖 <strong>Phrasal Verbs (A2)</strong> — At A2, phrasal verbs become more varied and sometimes have different meanings from the individual words. Key verbs: <em>find out</em> (discover), <em>look after</em> (care for), <em>run out of</em> (have none left), <em>give up</em> (quit), <em>pick up</em> (collect), <em>fill in</em> (complete a form), <em>grow up</em> (become adult). Many are <em>separable</em> — you can put the object between the verb and particle.",
                 items: [
                     { q: "I need to find _____ what time the train leaves.", correct: "out", explanation: "'Find out' means to discover information." },
                     { q: "Look _____ the baby while I am away.", correct: "after", explanation: "'Look after' means to take care of someone." },

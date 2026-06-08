@@ -11,6 +11,7 @@ const tegDataC1C2 = {
             word_formation: {
                 title: "Word Formation (C1)",
                 description: "Change the word in brackets to complete the sentence correctly.",
+                grammarTheory: "📖 <strong>Word Formation (C1)</strong> — At C1, complex conversions are common: ✦ <em>conceive → misconception</em> (prefix mis- + -tion) ✦ <em>apply → applicable</em> (spelling adjustment + -able) ✦ <em>value → invaluable</em> (in- + -able). Also master participial adjectives (<em>qualified, beneficial</em>) and abstract nouns (<em>independence, maintenance</em>). Always decide the word CLASS needed: noun? adjective? adverb? Then apply the right affix.",
                 items: [
                     { q: "The candidate's performance was completely _____ (EXCEPT).", correct: "exceptional", explanation: "Use adjective 'exceptional' to mean unusually good." },
                     { q: "We must consider the ethical _____ (IMPLICATE) of this research.", correct: "implications", explanation: "Noun plural 'implications' is needed here." },
@@ -27,6 +28,7 @@ const tegDataC1C2 = {
             open_cloze: {
                 title: "Open Cloze (C1)",
                 description: "Fill the blank with exactly ONE suitable word (pronouns, prepositions, articles, etc.).",
+                grammarTheory: "📖 <strong>Open Cloze (C1)</strong> — C1 structures to watch: ✦ Inversion with fronted negative adverbials (<em>Little did we know...</em>) ✦ Subjunctive after <em>it is high time / would rather / it is essential that</em> ✦ Fixed idioms: <em>on the point of, in spite of, no sooner... than, absorbed in, on the verge of</em> ✦ <em>none of which / some of whom</em> for relative clauses with quantifiers. If you see an unusual word order, inversion is likely involved.",
                 items: [
                     { q: "Little did we know _____ the project was doomed from the start.", correct: "that", explanation: "The inverted clause is followed by the conjunction 'that'." },
                     { q: "He was on the point _____ resigning when he was offered a promotion.", correct: "of", explanation: "The phrase is 'on the point of' + gerund." },
@@ -43,6 +45,7 @@ const tegDataC1C2 = {
             tenses_cloze: {
                 title: "Tenses Cloze (C1)",
                 description: "Select the correct advanced tense. (Future Perfect Continuous, Conditionals)",
+                grammarTheory: "📖 <strong>C1 Tenses</strong> — ✦ <em>Future Perfect Continuous</em>: <em>will have been + -ing</em> — duration leading up to a future point. ✦ <em>Third Conditional</em>: <em>If + had done → would have done</em> (unreal past). ✦ <em>Mixed Conditional</em>: past if-clause + present result (<em>If I hadn't missed my flight, I would be on vacation now</em>). ✦ <em>Subjunctive</em>: base form after <em>it is essential/vital/important that</em>. ✦ <em>Past subjunctive</em>: <em>were</em> after <em>as if, wish</em> for unreal situations.",
                 items: [
                     { q: "By next summer, I _____ downtown for exactly ten years.", options: ["will live", "will have been living", "will be living"], correct: "will have been living", explanation: "Use Future Perfect Continuous for duration leading up to a specific future point." },
                     { q: "If he _____ his sneakers, he wouldn't have slipped on the ice.", options: ["wore", "had worn", "was wearing"], correct: "had worn", explanation: "Use Past Perfect in the if-clause for a third conditional (unreal past)." },
@@ -59,6 +62,7 @@ const tegDataC1C2 = {
             sentence_transformation: {
                 title: "Sentence Transformation (C1)",
                 description: "Complete the second sentence so it means the same as the first. Use 3 to 6 words.",
+                grammarTheory: "📖 <strong>Sentence Transformation (C1)</strong> — Key C1 patterns: ✦ Inversion: <em>Little did he realize / Hardly had she arrived / Not until...</em> ✦ Third conditional inverted: <em>Had it not been for</em> ✦ Passive reporting: <em>is thought to have + past participle</em> ✦ Past regret: <em>wish + past perfect</em> ✦ <em>prevent someone from doing</em> ✦ Verb → noun conversion (<em>rose dramatically → a dramatic rise</em>). Use exactly 3–6 words — contractions count as two words!",
                 items: [
                     { q: "He didn't realize how serious the situation was.\nLittle _____ how serious the situation was.", correct: "did he realize", explanation: "Inversion after negative adverbial 'Little': 'did he realize'." },
                     { q: "I only managed to pass the exam because of your help.\nHad it _____ your help, I wouldn't have passed the exam.", correct: "not been for", explanation: "Third conditional inversion: 'Had it not been for' replaces 'If it hadn't been for'." },
@@ -75,6 +79,7 @@ const tegDataC1C2 = {
             error_correction: {
                 title: "Error Correction (C1)",
                 description: "Identify and correct the single error in the sentence.",
+                grammarTheory: "📖 <strong>Error Correction (C1)</strong> — C1-level traps: ✦ <em>hardly... when</em> (not 'has rung' → 'rang') ✦ <em>have no alternative but + to-infinitive</em> (not gerund) ✦ Inversion after negative adverbials: <em>Under no circumstances should the door</em> (not 'the door should') ✦ Perfect infinitive for past action: <em>is believed to have escaped</em> (not 'to escape') ✦ <em>The number of + plural noun = singular verb</em> ✦ <em>Despite</em> ≠ Despite of ✦ <em>suggest + -ing</em> (not infinitive).",
                 items: [
                     { q: "Hardly had I arrived when the phone has rung.", correct: "rang", explanation: "Use past simple 'rang' in the 'when' clause of a 'hardly... when' structure." },
                     { q: "The research suggests that the vaccine is highly effectful.", correct: "effective", explanation: "The adjective form of 'effect' meaning producing a desired result is 'effective'." },
@@ -91,6 +96,7 @@ const tegDataC1C2 = {
             vocab_matching: {
                 title: "Vocabulary Matching (C1)",
                 description: "Match the words on the left with their correct definitions on the right.",
+                grammarTheory: "📖 <strong>Vocabulary Matching (C1)</strong> — C1 vocabulary is often formal, academic, or literary. Look for precise distinctions: <em>anomalous</em> (abnormal), <em>equivocal</em> (ambiguous), <em>reticent</em> (not speaking openly), <em>transient</em> (briefly lasting). Use etymology clues — Latin/Greek roots help decode meaning. Match by exclusion: clear matches first, then use remaining options for harder ones.",
                 pairs: [
                     { word: "Anomalous", def: "Deviating from what is standard, normal, or expected." },
                     { word: "Cognizant", def: "Having knowledge or being aware of." },
@@ -105,6 +111,7 @@ const tegDataC1C2 = {
             idiom_challenge: {
                 title: "Collocation & Expression Challenge (C1)",
                 description: "Complete the everyday expression or collocation with the correct word.",
+                grammarTheory: "📖 <strong>Collocations & Idioms (C1)</strong> — C1 idioms are fully idiomatic — the meaning cannot be deduced from individual words. Key examples: <em>hit the nail on the head</em> (be exactly right), <em>take something with a grain of salt</em> (be skeptical), <em>up in the air</em> (undecided), <em>at the drop of a hat</em> (instantly), <em>get one's act together</em> (organize oneself), <em>call it a day</em> (stop working). The only way to master them is to learn each one as a fixed chunk!",
                 items: [
                     { q: "His arguments hit the _____ on the head.", options: ["nail", "hammer", "pin"], correct: 0, explanation: "To 'hit the nail on the head' means to describe exactly what is causing a situation." },
                     { q: "She took his comments with a grain of _____.", options: ["salt", "pepper", "sugar"], correct: 0, explanation: "To 'take something with a grain of salt' means to view it with skepticism." },
@@ -121,6 +128,7 @@ const tegDataC1C2 = {
             phrasal_verbs: {
                 title: "Phrasal Verbs (C1)",
                 description: "Complete the sentence with the correct preposition or adverb to form a phrasal verb.",
+                grammarTheory: "📖 <strong>Phrasal Verbs (C1)</strong> — C1 phrasal verbs are sophisticated and often formal: <em>come up with</em> (formulate), <em>bring about</em> (cause), <em>rule out</em> (exclude), <em>look into</em> (investigate), <em>hinge on</em> (depend on), <em>branch out</em> (expand), <em>stand up for</em> (defend), <em>get away with</em> (escape punishment). Many C1 verbs are inseparable three-word structures. The particle often adds metaphorical direction or intensity to the base verb.",
                 items: [
                     { q: "We need to come _____ with a new marketing strategy.", correct: "up", explanation: "'Come up with' means to invent or formulate." },
                     { q: "The new regulations will bring _____ significant changes.", correct: "about", explanation: "'Bring about' means to cause something to happen." },
@@ -144,6 +152,7 @@ const tegDataC1C2 = {
             word_formation: {
                 title: "Word Formation (C2)",
                 description: "Change the word in brackets to complete the sentence correctly.",
+                grammarTheory: "📖 <strong>Word Formation (C2)</strong> — At C2, expect rare and complex word forms: <em>fragmentation, irreconcilable, retrieval, unenforceable, disillusionment, unanimously, unsurpassed</em>. Key C2 patterns: ✦ abstract nouns in <em>-ment, -al, -tion</em> ✦ multiple affixes together (<em>un-enforce-able, ir-reconcil-able</em>) ✦ adverbs derived from complex adjectives (<em>unanimous → unanimously</em>). When multiple affixes are needed, add the prefix last after forming the base derivative.",
                 items: [
                     { q: "The policy is intended to prevent the _____ (FRAG) of the organization.", correct: "fragmentation", explanation: "Use the noun 'fragmentation' to mean breaking into small parts." },
                     { q: "His explanation was highly _____ (MYSTIFY) and cleared up nothing.", correct: "mystifying", explanation: "Adjective 'mystifying' describes something confusing." },
@@ -160,6 +169,7 @@ const tegDataC1C2 = {
             open_cloze: {
                 title: "Open Cloze (C2)",
                 description: "Fill the blank with exactly ONE suitable word (pronouns, prepositions, articles, etc.).",
+                grammarTheory: "📖 <strong>Open Cloze (C2)</strong> — C2 gaps are highly idiomatic and structural: ✦ <em>Much as</em> (= although) ✦ <em>but for / had it not been for</em> (hypothetical past) ✦ <em>no sooner... than</em> (inversion) ✦ <em>on the verge of + -ing</em> ✦ <em>provided that</em> (conditional) ✦ <em>when it comes to</em> ✦ <em>as to</em> (concerning) ✦ <em>in bad faith</em>. At C2, one missing word can change the entire grammatical structure — read the whole sentence twice before answering.",
                 items: [
                     { q: "Much _____ I would like to help you, I simply do not have the time.", correct: "as", explanation: "Conjunction 'Much as' means 'although'." },
                     { q: "He was so absorbed in his work that the hours flew _____.", correct: "by", explanation: "Time flies 'by'." },
@@ -176,6 +186,7 @@ const tegDataC1C2 = {
             tenses_cloze: {
                 title: "Tenses Cloze (C2)",
                 description: "Select the correct advanced tense. (Narrative Tenses, Subjunctive)",
+                grammarTheory: "📖 <strong>C2 Tenses</strong> — At the highest level: ✦ <em>Inversion with negative adverbials</em>: <em>Scarcely had I...</em>, <em>Not until... did she realize</em> ✦ <em>Mandative subjunctive</em>: <em>the manager demanded that the report be submitted</em> (no 3rd-person -s) ✦ <em>Supposing + past simple</em> (hypothetical) ✦ <em>But for + noun phrase</em> (= without) ✦ <em>Perfect infinitive</em>: <em>is reputed to have made</em> ✦ <em>Bound to + infinitive</em> (= certain to). If a sentence starts with a negative/restrictive adverbial, inversion is almost certainly required.",
                 items: [
                     { q: "Scarcely _____ the cookie from the oven when the kids ate it.", options: ["had I removed", "did I remove", "I had removed"], correct: "had I removed", explanation: "Inversion with negative adverbials ('Scarcely') requires auxiliary before subject." },
                     { q: "I'd rather you _____ the attorney until we have more evidence.", options: ["don't contact", "didn't contact", "hadn't contacted"], correct: "didn't contact", explanation: "Use 'would rather' + past subjunctive for present/future preference involving another person." },
@@ -192,6 +203,7 @@ const tegDataC1C2 = {
             sentence_transformation: {
                 title: "Sentence Transformation (C2)",
                 description: "Complete the second sentence so it means the same as the first. Use 3 to 6 words.",
+                grammarTheory: "📖 <strong>Sentence Transformation (C2)</strong> — Key C2 patterns: ✦ <em>Not until... did I realize</em> (inversion) ✦ <em>responsible for</em> (cause) ✦ <em>It makes no difference to me</em> ✦ <em>Rumor has it that</em> ✦ <em>Under no circumstances will I...</em> (inversion) ✦ <em>Never have I met</em> (inversion) ✦ <em>on grounds of lack of</em>. C2 transformations require precise, idiomatic phrase knowledge. Memorize high-frequency idioms and their structural equivalents.",
                 items: [
                     { q: "I only realized the truth when I read the report.\nNot until I read the report _____ the truth.", correct: "did I realize", explanation: "Inversion after negative adverbial 'Not until...': 'did I realize'." },
                     { q: "The company's failure was entirely due to poor management.\nPoor management was solely _____ the company's failure.", correct: "responsible for", explanation: "Use 'responsible for' to indicate cause." },
@@ -208,6 +220,7 @@ const tegDataC1C2 = {
             error_correction: {
                 title: "Error Correction (C2)",
                 description: "Identify and correct the single error in the sentence.",
+                grammarTheory: "📖 <strong>Error Correction (C2)</strong> — Errors at C2 are subtle: ✦ <em>no sooner... than</em> (not 'when') ✦ Inverted conditional result clause: <em>would have collapsed</em> (not 'had collapsed') ✦ <em>whose</em> for possessive relative determiners ✦ <em>to which</em> after 'agree' (not 'of which') ✦ <em>as though + past subjunctive 'were'</em> (not 'is') ✦ <em>for</em> (duration) vs <em>since</em> (starting point) ✦ <em>criteria</em> = plural (requires 'were') ✦ Subjunctive after 'essential that': base form, no -s.",
                 items: [
                     { q: "Were it not for his timely intervention, the deal had collapsed.", correct: "would have collapsed", explanation: "Inverted second/third mixed conditional requires 'would have collapsed' in the result clause." },
                     { q: "The committee has resolved that the proposal be rejected, which decision was final.", correct: "whose", explanation: "Use the relative determiner 'whose' before 'decision'." },
@@ -224,6 +237,7 @@ const tegDataC1C2 = {
             vocab_matching: {
                 title: "Vocabulary Matching (C2)",
                 description: "Match the words on the left with their correct definitions on the right.",
+                grammarTheory: "📖 <strong>Vocabulary Matching (C2)</strong> — C2 vocabulary is sophisticated and often literary or academic: <em>cacophony</em> (harsh sounds), <em>ephemeral</em> (fleeting), <em>insidious</em> (subtly harmful), <em>ubiquitous</em> (everywhere), <em>vociferous</em> (loud and forceful). Etymology is your best ally: Greek/Latin roots decode meaning. Approach strategically: match the definitions with clearest key terms first, then deduce the others.",
                 pairs: [
                     { word: "Cacophony", def: "A harsh, discordant mixture of sounds." },
                     { word: "Ephemeral", def: "Lasting for a very short time; fleeting." },
@@ -238,6 +252,7 @@ const tegDataC1C2 = {
             idiom_challenge: {
                 title: "Collocation & Expression Challenge (C2)",
                 description: "Complete the everyday expression or collocation with the correct word.",
+                grammarTheory: "📖 <strong>Collocations & Idioms (C2)</strong> — C2 idioms are archaic or highly formal, often with cultural or historical roots: <em>take a heavy toll</em> (cause suffering), <em>carry the can</em> (take the blame), <em>throw down the gauntlet</em> (issue a challenge), <em>hands down</em> (easily), <em>have a bone to pick</em> (have a grievance), <em>caught red-handed</em> (in the act), <em>let sleeping dogs lie</em> (avoid old conflicts), <em>face the music</em> (accept consequences). There is no shortcut — exposure and reading are essential!",
                 items: [
                     { q: "The economic crisis took a heavy _____ on the local businesses.", options: ["toll", "tax", "load"], correct: 0, explanation: "To 'take a heavy toll' means to cause significant damage or suffering." },
                     { q: "He was left to carry the _____ after his business partner fled.", options: ["can", "bag", "bucket"], correct: 0, explanation: "To 'carry the can' means to take responsibility or blame for something." },
@@ -254,6 +269,7 @@ const tegDataC1C2 = {
             phrasal_verbs: {
                 title: "Phrasal Verbs (C2)",
                 description: "Complete the sentence with the correct preposition or adverb to form a phrasal verb.",
+                grammarTheory: "📖 <strong>Phrasal Verbs (C2)</strong> — C2 phrasal verbs are precise and often formal: <em>boil down to</em> (be essentially), <em>crack down on</em> (take severe measures), <em>gloss over</em> (minimize a problem), <em>iron out</em> (resolve issues), <em>capitalize on</em> (exploit an advantage), <em>be saddled with</em> (be burdened), <em>guard against</em> (take precautions), <em>weed out</em> (remove unwanted elements), <em>degenerate into</em> (deteriorate), <em>scrape through</em> (barely succeed). Many are inseparable and frequently appear in formal writing and academic texts.",
                 items: [
                     { q: "The issue boils _____ to a lack of funding.", correct: "down", explanation: "'Boil down to' means to be the essential reason." },
                     { q: "The government has promised to crack _____ on tax evasion.", correct: "down", explanation: "'Crack down on' means to take severe measures." },

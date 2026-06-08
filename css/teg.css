@@ -783,3 +783,100 @@ footer {
     color: #15803d;
     box-shadow: none;
 }
+
+/* ── Grammar Theory Box ─────────────────────────────────────────── */
+.grammar-theory-box {
+    background: linear-gradient(135deg, rgba(255,248,230,0.95) 0%, rgba(255,243,210,0.90) 100%);
+    border: 1.5px solid rgba(234, 179, 8, 0.35);
+    border-left: 5px solid #eab308;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(234,179,8,0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.grammar-theory-box:hover {
+    box-shadow: 0 6px 28px rgba(234,179,8,0.14);
+}
+
+.grammar-theory-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 22px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 16px;
+    transition: background 0.2s;
+}
+
+.grammar-theory-header:hover {
+    background: rgba(234, 179, 8, 0.07);
+}
+
+.grammar-theory-icon {
+    font-size: 1.3rem;
+}
+
+.grammar-theory-label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    color: #92400e;
+    flex: 1;
+    letter-spacing: 0.02em;
+}
+
+.grammar-theory-chevron {
+    font-size: 1.1rem;
+    color: #ca8a04;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: inline-block;
+}
+
+.grammar-theory-box.open .grammar-theory-chevron {
+    transform: rotate(90deg);
+}
+
+.grammar-theory-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+    padding: 0 22px;
+}
+
+.grammar-theory-box.open .grammar-theory-body {
+    max-height: 600px;
+    padding: 0 22px 20px;
+}
+
+.grammar-theory-body p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: #44403c;
+    margin: 0 0 14px;
+}
+
+.grammar-theory-body strong {
+    color: #78350f;
+    font-weight: 700;
+}
+
+.grammar-theory-body em {
+    color: #92400e;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.grammar-theory-speak {
+    font-size: 0.85rem !important;
+    padding: 7px 14px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(234,179,8,0.3) !important;
+    color: #78350f !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}

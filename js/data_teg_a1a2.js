@@ -22,7 +22,12 @@ const tegDataA1A2 = {
                     { q: "My teacher is always very _____ (HELP).", correct: "helpful", explanation: "Add '-ful' to the noun/verb 'help' to form the adjective 'helpful'." },
                     { q: "This painting is very _____ (COLOUR).", correct: "colourful", explanation: "Add '-ful' to the noun 'colour' to get the adjective 'colourful'." },
                     { q: "He speaks English _____ (GOOD).", correct: "well", explanation: "'Well' is the irregular adverb form of the adjective 'good'." },
-                    { q: "The children played _____ (HAPPY) in the garden.", correct: "happily", explanation: "Change '-y' to '-ily' to make the adverb 'happily'." }
+                    { q: "The children played _____ (HAPPY) in the garden.", correct: "happily", explanation: "Change '-y' to '-ily' to make the adverb 'happily'." },
+                    { q: "This chair is very _____ (COMFORT).", correct: "comfortable", explanation: "Add '-able' to form the adjective." },
+                    { q: "He is a fast _____ (RUN).", correct: "runner", explanation: "Double the consonant and add '-er' for the person noun." },
+                    { q: "She painted the picture _____ (BEAUTY).", correct: "beautifully", explanation: "Add '-fully' to form the adverb." },
+                    { q: "The _____ (TEACH) gave us homework.", correct: "teacher", explanation: "Add '-er' to form the person noun." },
+                    { q: "It was a _____ (WONDER) trip.", correct: "wonderful", explanation: "Add '-ful' to form the adjective." }
                 ]
             },
             open_cloze: {
@@ -39,7 +44,12 @@ const tegDataA1A2 = {
                     { q: "We usually watch TV _____ the evening.", correct: "in", explanation: "The standard time expression is 'in the evening'." },
                     { q: "I do not like tea, _____ I love coffee.", correct: "but", explanation: "Use the conjunction 'but' to show contrast." },
                     { q: "_____ you speak English?", correct: "Do", explanation: "Use auxiliary verb 'Do' to form questions in simple present." },
-                    { q: "Where _____ you from?", correct: "are", explanation: "Use the verb 'to be' ('are') with the subject pronoun 'you'." }
+                    { q: "Where _____ you from?", correct: "are", explanation: "Use the verb 'to be' ('are') with the subject pronoun 'you'." },
+                    { q: "I go to bed _____ 10 PM every night.", correct: "at", explanation: "Use 'at' for specific times on the clock." },
+                    { q: "My father works _____ a hospital.", correct: "in", explanation: "Use 'in' for enclosed workspaces like a hospital." },
+                    { q: "_____ is your favorite color?", correct: "What", explanation: "Use 'What' to ask about things." },
+                    { q: "She _____ not like playing tennis.", correct: "does", explanation: "Use 'does' for negative third-person singular present." },
+                    { q: "We are going to _____ beach tomorrow.", correct: "the", explanation: "Use definite article 'the' for specific places like the beach." }
                 ]
             },
             tenses_cloze: {
@@ -56,7 +66,12 @@ const tegDataA1A2 = {
                     { q: "_____ soccer on weekends?", options: ["Do you play", "Are you playing", "You play"], correct: "Do you play", explanation: "Present Simple question form for habits ('on weekends')." },
                     { q: "Look! The bus _____. Let's go!", options: ["comes", "is coming", "come"], correct: "is coming", explanation: "Use Present Continuous for actions happening exactly now ('Look!')." },
                     { q: "She never _____ her apartment on Sundays.", options: ["clean", "is cleaning", "cleans"], correct: "cleans", explanation: "Use Present Simple with adverbs of frequency ('never')." },
-                    { q: "They _____ today because it's a national holiday.", options: ["do not work", "are not working", "not work"], correct: "are not working", explanation: "Use Present Continuous for temporary situations happening around today." }
+                    { q: "They _____ today because it's a national holiday.", options: ["do not work", "are not working", "not work"], correct: "are not working", explanation: "Use Present Continuous for temporary situations happening around today." },
+                    { q: "I _____ English grammar at this moment.", options: ["study", "am studying", "studies"], correct: "am studying", explanation: "Use Present Continuous for actions happening right now." },
+                    { q: "He usually _____ a book before bed.", options: ["reads", "is reading", "read"], correct: "reads", explanation: "Use Present Simple for daily habits." },
+                    { q: "Why _____? Is there a joke?", options: ["do you laugh", "are you laughing", "you laugh"], correct: "are you laughing", explanation: "Use Present Continuous for actions happening exactly now." },
+                    { q: "The sun _____ in the east.", options: ["rise", "is rising", "rises"], correct: "rises", explanation: "Use Present Simple for permanent facts." },
+                    { q: "We _____ to the cinema every Saturday.", options: ["go", "are going", "goes"], correct: "go", explanation: "Use Present Simple for recurring routines ('every Saturday')." }
                 ]
             },
             sentence_transformation: {
@@ -73,7 +88,12 @@ const tegDataA1A2 = {
                     { q: "Is this your pen?\nDoes this pen belong _____ you?", correct: "to", explanation: "The verb 'belong' is followed by the preposition 'to'." },
                     { q: "They don't have any money.\nThey have _____ money.", correct: "no", explanation: "'Don't have any' can be rewritten as 'have no' in positive sentences." },
                     { q: "My room is not dirty.\nMy room is _____.", correct: "clean", explanation: "The opposite of 'not dirty' is 'clean'." },
-                    { q: "I prefer coffee to tea.\nI like coffee _____ than tea.", correct: "more", explanation: "To prefer something means to like it 'more than' another." }
+                    { q: "I prefer coffee to tea.\nI like coffee _____ than tea.", correct: "more", explanation: "To prefer something means to like it 'more than' another." },
+                    { q: "This is my car.\nThis car belongs _____ me.", correct: "to", explanation: "Use 'belongs to' to indicate possession." },
+                    { q: "I have never seen such a big dog.\nThat is the _____ dog I have ever seen.", correct: "biggest", explanation: "Use the superlative 'biggest'." },
+                    { q: "There are no apples in the fridge.\nThere aren't _____ apples in the fridge.", correct: "any", explanation: "Use 'any' in negative sentences." },
+                    { q: "My brother is taller than me.\nI am _____ than my brother.", correct: "shorter", explanation: "The opposite of taller is shorter." },
+                    { q: "She is a very slow driver.\nShe drives very _____.", correct: "slowly", explanation: "Change the adjective to an adverb." }
                 ]
             },
             error_correction: {
@@ -90,7 +110,12 @@ const tegDataA1A2 = {
                     { q: "He drives very good.", correct: "well", explanation: "Use the adverb 'well' to modify the verb 'drives'." },
                     { q: "I like very much chocolate.", correct: "like chocolate very much", explanation: "The object 'chocolate' must follow the verb: 'I like chocolate very much'." },
                     { q: "She can to speak French.", correct: "speak", explanation: "Modal 'can' is followed by bare infinitive without 'to'." },
-                    { q: "Is this book of John?", correct: "John's", explanation: "Use possessive ''s' to indicate possession: 'John's'." }
+                    { q: "Is this book of John?", correct: "John's", explanation: "Use possessive ''s' to indicate possession: 'John's'." },
+                    { q: "They doesn't like pizza.", correct: "don't", explanation: "Use 'don't' with plural subjects like 'they'." },
+                    { q: "I go to work in bus.", correct: "by", explanation: "Use 'by' for means of transport: 'by bus'." },
+                    { q: "We was at the park yesterday.", correct: "were", explanation: "Use 'were' for plural past tense of 'to be'." },
+                    { q: "She play tennis every weekend.", correct: "plays", explanation: "Add 's' for third-person singular in present simple." },
+                    { q: "Can you to help me?", correct: "help", explanation: "Modal verbs do not take 'to' before the main verb." }
                 ]
             },
             vocab_matching: {
@@ -105,7 +130,12 @@ const tegDataA1A2 = {
                     { word: "Doctor", def: "A person who helps sick people." },
                     { word: "Jacket", def: "A short coat worn for warmth." },
                     { word: "Train", def: "A long vehicle that travels on tracks." },
-                    { word: "Wallet", def: "A small folder for money and cards." }
+                    { word: "Wallet", def: "A small folder for money and cards." },
+                    { word: "Dentist", def: "A doctor who looks after your teeth." },
+                    { word: "Umbrella", def: "Used to protect yourself from the rain." },
+                    { word: "Bakery", def: "A shop where you buy bread and cakes." },
+                    { word: "Pilot", def: "A person who flies an airplane." },
+                    { word: "Dictionary", def: "A book that explains the meanings of words." }
                 ]
             },
             idiom_challenge: {
@@ -122,7 +152,12 @@ const tegDataA1A2 = {
                     { q: "She decided to _____ a shower.", options: ["take", "make", "do"], correct: 0, explanation: "We say 'take a shower' or 'have a shower'." },
                     { q: "He likes to _____ time with friends.", options: ["spend", "pass", "use"], correct: 0, explanation: "We say 'spend time' with someone." },
                     { q: "Could you _____ me a favour?", options: ["make", "do", "give"], correct: 1, explanation: "The correct expression is 'do a favour'." },
-                    { q: "I always _____ my teeth twice a day.", options: ["wash", "brush", "clean"], correct: 1, explanation: "We 'brush our teeth'." }
+                    { q: "I always _____ my teeth twice a day.", options: ["wash", "brush", "clean"], correct: 1, explanation: "We 'brush our teeth'." },
+                    { q: "Can I _____ a question?", options: ["ask", "do", "make"], correct: 0, explanation: "We say 'ask a question'." },
+                    { q: "He needs to _____ a phone call.", options: ["do", "make", "take"], correct: 1, explanation: "We 'make a phone call'." },
+                    { q: "It's time to _____ to bed.", options: ["go", "make", "do"], correct: 0, explanation: "The correct collocation is 'go to bed'." },
+                    { q: "Did you _____ a good time at the party?", options: ["make", "do", "have"], correct: 2, explanation: "We say 'have a good time'." },
+                    { q: "I usually _____ coffee for breakfast.", options: ["have", "eat", "take"], correct: 0, explanation: "We 'have' food and drinks for meals." }
                 ]
             },
             phrasal_verbs: {
@@ -139,7 +174,12 @@ const tegDataA1A2 = {
                     { q: "Put _____ your coat, it's cold outside.", correct: "on", explanation: "The phrasal verb is 'put on'." },
                     { q: "Take _____ your shoes before entering the house.", correct: "off", explanation: "The phrasal verb is 'take off'." },
                     { q: "Hurry _____! We are going to be late.", correct: "up", explanation: "The phrasal verb is 'hurry up'." },
-                    { q: "Look _____! The bus is coming.", correct: "out", explanation: "The phrasal verb 'look out' means be careful." }
+                    { q: "Look _____! The bus is coming.", correct: "out", explanation: "The phrasal verb 'look out' means be careful." },
+                    { q: "Can you turn _____ the music? I can't hear it.", correct: "up", explanation: "'Turn up' means to increase the volume." },
+                    { q: "Please write _____ your name on this paper.", correct: "down", explanation: "'Write down' means to record something on paper." },
+                    { q: "I want to try _____ these shoes before I buy them.", correct: "on", explanation: "'Try on' means to test clothes for fit." },
+                    { q: "Throw _____ that old apple, it's bad.", correct: "away", explanation: "'Throw away' means to put something in the garbage." },
+                    { q: "We need to set _____ early for the trip tomorrow.", correct: "off", explanation: "'Set off' means to start a journey." }
                 ]
             }
         }

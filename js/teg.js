@@ -343,8 +343,8 @@ function playNextTtsChunk() {
     }
     
     const chunk = ttsTextChunks[currentTtsChunkIndex];
-    // Use Youdao TTS API (type=2 is American English) to bypass Google TTS blocking
-    const url = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(chunk)}&type=2`;
+    // Use Google Translate TTS API for natural American English voice, bypassing device limitations
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=en-US&client=tw-ob&q=${encodeURIComponent(chunk)}`;
     
     ttsAudioElement.src = url;
     ttsAudioElement.play().catch(err => {
@@ -754,6 +754,28 @@ function showResultsModal(correct, total, percentage) {
 
 function closeModal() {
     document.getElementById('results-modal').classList.remove('active');
+}
+
+function continueToNextExercise() {
+    closeModal();
+    const tabs = ['word_formation', 'open_cloze', 'tenses_cloze', 'sentence_transformation', 'error_correction', 'vocab_matching', 'idiom_challenge', 'phrasal_verbs', 'lexical_fields', 'grammar_topics'];
+    const currentIndex = tabs.indexOf(currentTab);
+    
+    if (currentIndex !== -1 && currentIndex < tabs.length - 1) {
+        // Go to next tab
+        setTab(tabs[currentIndex + 1]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (currentIndex === tabs.length - 1) {
+        // Reached the end of the tabs, go to next level if possible
+        const levels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+        const lvlIdx = levels.indexOf(currentLevel);
+        if (lvlIdx !== -1 && lvlIdx < levels.length - 1) {
+            setLevel(levels[lvlIdx + 1]);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            alert("Congratulations! You have completed all categories in C2.");
+        }
+    }
 }
 
 // Calculate level progress (average of highest percentages of all exercises except lexical fields)

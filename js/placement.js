@@ -6,12 +6,7 @@ let timerInterval;
 let timeLeft = 15 * 60; // 15 minutes
 let testSubmitted = false;
 
-// Web Speech API Initialization
-if (window.speechSynthesis) {
-    window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.getVoices();
-    };
-}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Hide test initially, wait for Start button
@@ -212,9 +207,35 @@ function generateCertificate(score) {
 }
 
 // --- TTS LOGIC (Reused from TEG) ---
+let ttsAudioElement = new Audio();
+let ttsTextChunks = [];
+let currentTtsChunkIndex = 0;
+let isTtsPlayingState = false;
+
+function splitTextForGoogleTTS(text, maxLen = 180) {
+    const chunks = [];
+    let rem = text;
+    while (rem.length > 0) {
+        if (rem.length <= maxLen) {
+            chunks.push(rem);
+            break;
+        }
+        let idx = rem.lastIndexOf('. ', maxLen);
+        if (idx === -1) idx = rem.lastIndexOf('? ', maxLen);
+        if (idx === -1) idx = rem.lastIndexOf('! ', maxLen);
+        if (idx === -1) idx = rem.lastIndexOf(', ', maxLen);
+        if (idx === -1) idx = rem.lastIndexOf(' ', maxLen);
+        if (idx === -1) idx = maxLen;
+        
+        chunks.push(rem.substring(0, idx + 1).trim());
+        rem = rem.substring(idx + 1).trim();
+    }
+    return chunks.filter(c => c.length > 0);
+}
+
 function speakPhrase(text) {
     window.stopAudio();
-    if (!text || !window.speechSynthesis) return;
+    if (!text) return;
 
     // Convert HH:MM time formats to Military Time to be read correctly
     let processedText = text.replace(/\b([0-9]|0[0-9]|1[0-9]|2[0-3]):00\b/g, '$1 hundred hours');
@@ -236,38 +257,47 @@ function speakPhrase(text) {
 
     if (!cleaned) return;
 
-    const utterance = new SpeechSynthesisUtterance(cleaned);
+    ttsTextChunks = splitTextForGoogleTTS(cleaned, 180);
+    currentTtsChunkIndex = 0;
+    isTtsPlayingState = true;
     
-    // Select best US English voice for a clear, professional American pronunciation
-    let voices = window.speechSynthesis.getVoices();
-    let bestVoice = null;
-    let preferredNames = ['Google US English', 'Samantha', 'Alex', 'Microsoft Zira', 'Microsoft Mark'];
-    
-    for (let name of preferredNames) {
-        bestVoice = voices.find(v => v.name.includes(name) && v.lang.startsWith('en-US'));
-        if (bestVoice) break;
+    if (ttsTextChunks.length > 0) {
+        playNextTtsChunk();
     }
-    
-    if (!bestVoice) {
-        bestVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en_US');
-    }
-    
-    if (!bestVoice) {
-        bestVoice = voices.find(v => v.lang.startsWith('en'));
-    }
-
-    if (bestVoice) {
-        utterance.voice = bestVoice;
-    }
-    
-    utterance.rate = 0.95;
-    utterance.pitch = 1.0;
-    
-    window.speechSynthesis.speak(utterance);
 }
 
-window.stopAudio = function () {
-    if (window.speechSynthesis) {
-        window.speechSynthesis.cancel();
+function playNextTtsChunk() {
+    if (currentTtsChunkIndex >= ttsTextChunks.length) {
+        isTtsPlayingState = false;
+        return;
     }
+    
+    const chunk = ttsTextChunks[currentTtsChunkIndex];
+    // Use Google Translate TTS API for natural American English voice, bypassing device limitations
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=en-US&client=tw-ob&q=${encodeURIComponent(chunk)}`;
+    
+    ttsAudioElement.src = url;
+    ttsAudioElement.play().catch(err => {
+        console.error("Error playing TTS chunk:", err);
+        currentTtsChunkIndex++;
+        playNextTtsChunk();
+    });
+}
+
+ttsAudioElement.onended = () => {
+    if (isTtsPlayingState) {
+        currentTtsChunkIndex++;
+        setTimeout(() => {
+            if (isTtsPlayingState) {
+                playNextTtsChunk();
+            }
+        }, 400); // Natural pause between sentences
+    }
+};
+
+window.stopAudio = function () {
+    ttsAudioElement.pause();
+    ttsTextChunks = [];
+    currentTtsChunkIndex = 0;
+    isTtsPlayingState = false;
 };

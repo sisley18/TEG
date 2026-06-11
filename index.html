@@ -97,16 +97,16 @@
 
         <!-- Exercise Category Tabs -->
         <div class="tabs-container">
-            <button class="tab-btn" id="tab-btn-word_formation" onclick="setTab('word_formation')">1. 🔠 Word Formation</button>
-            <button class="tab-btn" id="tab-btn-open_cloze" onclick="setTab('open_cloze')">2. 📝 Open Cloze</button>
-            <button class="tab-btn" id="tab-btn-tenses_cloze" onclick="setTab('tenses_cloze')">3. ⏱️ Tenses Cloze</button>
-            <button class="tab-btn" id="tab-btn-sentence_transformation" onclick="setTab('sentence_transformation')">4. 🔄 Sentence Transformation</button>
-            <button class="tab-btn" id="tab-btn-error_correction" onclick="setTab('error_correction')">5. 🔍 Error Correction</button>
-            <button class="tab-btn" id="tab-btn-vocab_matching" onclick="setTab('vocab_matching')">6. 🧩 Matching Game</button>
-            <button class="tab-btn" id="tab-btn-idiom_challenge" onclick="setTab('idiom_challenge')">7. 💡 Collocations</button>
-            <button class="tab-btn" id="tab-btn-phrasal_verbs" onclick="setTab('phrasal_verbs')">8. 🗣️ Phrasal Verbs</button>
-            <button class="tab-btn" id="tab-btn-lexical_fields" onclick="setTab('lexical_fields')">9. 🏢 Lexical Fields</button>
-            <button class="tab-btn" id="tab-btn-grammar_topics" onclick="setTab('grammar_topics')">10. 📘 Grammar Topics</button>
+            <button class="tab-btn" id="tab-btn-idiom_challenge" onclick="setTab('idiom_challenge')">1. 💡 Collocations</button>
+            <button class="tab-btn" id="tab-btn-error_correction" onclick="setTab('error_correction')">2. 🔍 Error Correction</button>
+            <button class="tab-btn" id="tab-btn-grammar_topics" onclick="setTab('grammar_topics')">3. 📘 Grammar Topics</button>
+            <button class="tab-btn" id="tab-btn-lexical_fields" onclick="setTab('lexical_fields')">4. 🏢 Lexical Fields</button>
+            <button class="tab-btn" id="tab-btn-vocab_matching" onclick="setTab('vocab_matching')">5. 🧩 Matching Game</button>
+            <button class="tab-btn" id="tab-btn-open_cloze" onclick="setTab('open_cloze')">6. 📝 Open Cloze</button>
+            <button class="tab-btn" id="tab-btn-phrasal_verbs" onclick="setTab('phrasal_verbs')">7. 🗣️ Phrasal Verbs</button>
+            <button class="tab-btn" id="tab-btn-sentence_transformation" onclick="setTab('sentence_transformation')">8. 🔄 Sentence Transformation</button>
+            <button class="tab-btn" id="tab-btn-tenses_cloze" onclick="setTab('tenses_cloze')">9. ⏱️ Tenses Cloze</button>
+            <button class="tab-btn" id="tab-btn-word_formation" onclick="setTab('word_formation')">10. 🔠 Word Formation</button>
         </div>
 
         <!-- Main Display Card -->
@@ -114,13 +114,13 @@
             <!-- Grammar Sidebar (Hidden by default) -->
             <div id="grammar-sidebar-container" style="display: none; flex-direction: column; gap: 8px; width: 250px; border-right: 1px solid var(--border-color); padding-right: 20px; flex-shrink: 0;">
                 <h3 style="margin-bottom: 10px; color: var(--text-primary); font-family: var(--font-heading);">Grammar Topics</h3>
-                <button class="option-btn" id="gt-btn-comparatives" onclick="setGrammarTopic('comparatives')">Comparatives & Superlatives</button>
-                <button class="option-btn" id="gt-btn-conditionals" onclick="setGrammarTopic('conditionals')">Conditionals</button>
-                <button class="option-btn" id="gt-btn-modals" onclick="setGrammarTopic('modals')">Modals</button>
-                <button class="option-btn" id="gt-btn-passive" onclick="setGrammarTopic('passive')">Passive Voice & Causative</button>
-                <button class="option-btn" id="gt-btn-reported" onclick="setGrammarTopic('reported')">Reported Speech</button>
-                <button class="option-btn" id="gt-btn-gerunds" onclick="setGrammarTopic('gerunds')">Gerunds & Infinitives</button>
-                <button class="option-btn" id="gt-btn-relative" onclick="setGrammarTopic('relative')">Relative Clauses</button>
+                <button class="option-btn" id="gt-btn-comparatives" onclick="setGrammarTopic('comparatives')">1. Comparatives & Superlatives</button>
+                <button class="option-btn" id="gt-btn-conditionals" onclick="setGrammarTopic('conditionals')">2. Conditionals</button>
+                <button class="option-btn" id="gt-btn-gerunds" onclick="setGrammarTopic('gerunds')">3. Gerunds & Infinitives</button>
+                <button class="option-btn" id="gt-btn-modals" onclick="setGrammarTopic('modals')">4. Modals</button>
+                <button class="option-btn" id="gt-btn-passive" onclick="setGrammarTopic('passive')">5. Passive Voice & Causative</button>
+                <button class="option-btn" id="gt-btn-relative" onclick="setGrammarTopic('relative')">6. Relative Clauses</button>
+                <button class="option-btn" id="gt-btn-reported" onclick="setGrammarTopic('reported')">7. Reported Speech</button>
             </div>
 
             <!-- Content Area -->
@@ -132,11 +132,11 @@
                     <div id="lexical-dropdown-container" style="display: none; margin-top: 15px;">
                         <label style="font-weight: 600; margin-right: 10px; color: var(--text-color);">Select Field:</label>
                         <select id="lexical-field-select" class="teg-input" style="max-width: 250px; display: inline-block; padding: 8px;" onchange="loadActiveExercise()">
-                            <option value="programming">Programming</option>
-                            <option value="health">Health</option>
-                            <option value="it">IT</option>
-                            <option value="human_resources">Human Resources</option>
-                            <option value="services">Services</option>
+                            <option value="health">1. Health</option>
+                            <option value="human_resources">2. Human Resources</option>
+                            <option value="it">3. IT</option>
+                            <option value="programming">4. Programming</option>
+                            <option value="services">5. Services</option>
                         </select>
                     </div>
                 </div>

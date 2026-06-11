@@ -758,7 +758,7 @@ function closeModal() {
 
 function continueToNextExercise() {
     closeModal();
-    const tabs = ['word_formation', 'open_cloze', 'tenses_cloze', 'sentence_transformation', 'error_correction', 'vocab_matching', 'idiom_challenge', 'phrasal_verbs', 'lexical_fields', 'grammar_topics'];
+    const tabs = ['idiom_challenge', 'error_correction', 'grammar_topics', 'lexical_fields', 'vocab_matching', 'open_cloze', 'phrasal_verbs', 'sentence_transformation', 'tenses_cloze', 'word_formation'];
     const currentIndex = tabs.indexOf(currentTab);
     
     if (currentIndex !== -1 && currentIndex < tabs.length - 1) {
@@ -781,7 +781,7 @@ function continueToNextExercise() {
 // Calculate level progress (average of highest percentages of all exercises except lexical fields)
 function updateLevelProgress(level) {
     let totalScore = 0;
-    const tabs = ['word_formation', 'open_cloze', 'tenses_cloze', 'sentence_transformation', 'error_correction', 'vocab_matching', 'idiom_challenge', 'phrasal_verbs'];
+    const tabs = ['idiom_challenge', 'error_correction', 'vocab_matching', 'open_cloze', 'phrasal_verbs', 'sentence_transformation', 'tenses_cloze', 'word_formation'];
     
     tabs.forEach(tab => {
         const key = `${level}_${tab}_percentage`;
